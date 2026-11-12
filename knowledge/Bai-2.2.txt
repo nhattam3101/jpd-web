@@ -1,0 +1,43 @@
+これ（このN） — Cài này (Cái N này)	Kồ rê (kồ nô N)
+それ（そのN） — Cài đó (Cái N đó)	Sồ rê (sồ nô N)
+あれ（あのN） — Cài kia (Cái N kia)	À rê (À nô N)
+かばん — Cặp	Kà ban
+ズボン — Quần	Zứ pon
+シャツ — Áo sơ mi	Shá chừ
+Tシャツ — Áo thun	T Shá chừ
+とけい — Đồng hồ	Tồ kê
+～えん — Yên	en
+～ドル — Đô la	Đố rừ
+～ドン — Việt Nam Đồng	Đon
+いくら？ — Bao nhiêu tiền	Í kư ra
+じゃ、Nをください — Vậy thì, hãy lấy cái N	Jà, N ố kừ đa sai
+インド — Ấn Độ	Ín đồ
+ドイツ — Đức	Đô í chừ
+フランス — Pháp	Fừ ran sừ
+ひゃく — 100	Hya kừ
+にひゃく — 200	Ni Hya kừ
+さんびゃく — 300	Sam Bya kừ
+よんひゃく — 400	Yon Hya kừ
+ごひゃく — 500	Gô Hya kừ
+ろっぴゃく — 600	Rop pya kừ
+ななひゃく — 700	Nà na Hya kừ
+はっぴゃく — 800	Hap pya kừ
+きゅうひゃく — 900	Khiu Hya kừ
+せん (いっせん) — 1000	Sén (ịs sen)
+にせん — 2000	Ni sen
+さんぜん — 3000	San zen
+よんせん — 4000	Yon sen
+ごせん — 5000	Go sen
+ろくせん — 6000	Rồ kư sen
+ななせん — 7000	Nà na sen
+はっせん — 8000	Hạs sen
+きゅうせん — 9000	Khiu sen
+いちまん — 10000	Ì chi man
+にまん — 20000	Ni man
+さんまん — 30000	San man
+よんまん — 40000	Yon man
+ごまん — 50000	Gô man
+ろくまん — 60000	Rồ kư man
+ななまん — 70000	Nà na man
+はちまん — 80000	Hà chi man
+きゅうまん — 90000	Khiu man

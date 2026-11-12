@@ -1,0 +1,583 @@
+import { VocabularyCard, FlashCard } from '../../types';
+
+export const lesson1_1Cards: (VocabularyCard & FlashCard)[] = [
+  {
+    "id": "1-1-watashi",
+    "lesson": "1.1",
+    "kana": "わたし",
+    "vietnamese": "Tôi",
+    "pronunciation": "Wà ta shi",
+    "priority": "high",
+    "japanese": "私（わたし）",
+    "frontText": "私（わたし） — Tôi",
+    "kanji": "私"
+  },
+  {
+    "id": "1-1-onamae",
+    "lesson": "1.1",
+    "kana": "(お)なまえ",
+    "vietnamese": "Tên",
+    "pronunciation": "ồ nà ma ê",
+    "priority": "normal",
+    "japanese": "(お)なまえ",
+    "frontText": "(お)なまえ — Tên"
+  },
+  {
+    "id": "1-1-okuni",
+    "lesson": "1.1",
+    "kana": "(お)くに",
+    "vietnamese": "Đất nước",
+    "pronunciation": "ồ kừ ni",
+    "priority": "normal",
+    "japanese": "(お)くに",
+    "frontText": "(お)くに — Đất nước"
+  },
+  {
+    "id": "1-1-oshigoto",
+    "lesson": "1.1",
+    "kana": "(お)しごと",
+    "vietnamese": "Công việc",
+    "pronunciation": "ồ shí gô tồ",
+    "priority": "normal",
+    "japanese": "(お)しごと",
+    "frontText": "(お)しごと — Công việc"
+  },
+  {
+    "id": "1-1-betonamu",
+    "lesson": "1.1",
+    "kana": "ベトナム",
+    "vietnamese": "Việt Nam",
+    "pronunciation": "Bề tô na mư",
+    "priority": "normal",
+    "japanese": "ベトナム",
+    "frontText": "ベトナム — Việt Nam"
+  },
+  {
+    "id": "1-1-nihon",
+    "lesson": "1.1",
+    "kana": "にほん",
+    "vietnamese": "Nhật Bản",
+    "pronunciation": "Nì hon",
+    "priority": "high",
+    "japanese": "日本（にほん）",
+    "frontText": "日本（にほん） — Nhật Bản",
+    "kanji": "日本"
+  },
+  {
+    "id": "1-1-amerika",
+    "lesson": "1.1",
+    "kana": "アメリカ",
+    "vietnamese": "Mỹ",
+    "pronunciation": "À mế ri ka",
+    "priority": "normal",
+    "japanese": "アメリカ",
+    "frontText": "アメリカ — Mỹ"
+  },
+  {
+    "id": "1-1-itaria",
+    "lesson": "1.1",
+    "kana": "イタリア",
+    "vietnamese": "Ý",
+    "pronunciation": "Ì ta ri a",
+    "priority": "normal",
+    "japanese": "イタリア",
+    "frontText": "イタリア — Ý"
+  },
+  {
+    "id": "1-1-osutoraria",
+    "lesson": "1.1",
+    "kana": "オーストラリア",
+    "vietnamese": "Úc",
+    "pronunciation": "ố sừ tô ra ri à",
+    "priority": "normal",
+    "japanese": "オーストラリア",
+    "frontText": "オーストラリア — Úc"
+  },
+  {
+    "id": "1-1-kankoku",
+    "lesson": "1.1",
+    "kana": "かんこく",
+    "vietnamese": "Hàn Quốc",
+    "pronunciation": "Kan kố kừ",
+    "priority": "normal",
+    "japanese": "かんこく",
+    "frontText": "かんこく — Hàn Quốc"
+  },
+  {
+    "id": "1-1-tai",
+    "lesson": "1.1",
+    "kana": "タイ",
+    "vietnamese": "Thái",
+    "pronunciation": "Tai",
+    "priority": "normal",
+    "japanese": "タイ",
+    "frontText": "タイ — Thái"
+  },
+  {
+    "id": "1-1-chuugoku",
+    "lesson": "1.1",
+    "kana": "ちゅうごく",
+    "vietnamese": "Trung Quốc",
+    "pronunciation": "Chiu gố kừ",
+    "priority": "normal",
+    "japanese": "ちゅうごく",
+    "frontText": "ちゅうごく — Trung Quốc"
+  },
+  {
+    "id": "1-1-roshia",
+    "lesson": "1.1",
+    "kana": "ロシア",
+    "vietnamese": "Nga",
+    "pronunciation": "Rố shi a",
+    "priority": "normal",
+    "japanese": "ロシア",
+    "frontText": "ロシア — Nga"
+  },
+  {
+    "id": "1-1-jin",
+    "lesson": "1.1",
+    "kana": "～じん",
+    "vietnamese": "Người ~",
+    "pronunciation": "~jin",
+    "priority": "high",
+    "japanese": "～じん",
+    "frontText": "～じん — Người ~"
+  },
+  {
+    "id": "1-1-go",
+    "lesson": "1.1",
+    "kana": "～ご",
+    "vietnamese": "Tiếng ~",
+    "pronunciation": "~go",
+    "priority": "high",
+    "japanese": "～ご",
+    "frontText": "～ご — Tiếng ~"
+  },
+  {
+    "id": "1-1-eigo",
+    "lesson": "1.1",
+    "kana": "えいご",
+    "vietnamese": "Tiếng Anh",
+    "pronunciation": "ế gồ",
+    "priority": "normal",
+    "japanese": "えいご",
+    "frontText": "えいご — Tiếng Anh"
+  },
+  {
+    "id": "1-1-koukou",
+    "lesson": "1.1",
+    "kana": "こうこう",
+    "vietnamese": "Cấp 3",
+    "pronunciation": "Kố kồ",
+    "priority": "normal",
+    "japanese": "こうこう",
+    "frontText": "こうこう — Cấp 3"
+  },
+  {
+    "id": "1-1-daigaku",
+    "lesson": "1.1",
+    "kana": "だいがく",
+    "vietnamese": "Đại học",
+    "pronunciation": "Đai gá kừ",
+    "priority": "high",
+    "japanese": "大学（だいがく）",
+    "frontText": "大学（だいがく） — Đại học",
+    "kanji": "大学"
+  },
+  {
+    "id": "1-1-nihongogakkou",
+    "lesson": "1.1",
+    "kana": "にほんごがっこう",
+    "vietnamese": "Trường tiếng Nhật",
+    "pronunciation": "Nì hon gô gạk kô",
+    "priority": "high",
+    "japanese": "日本語学校（にほんごがっこう）",
+    "frontText": "日本語学校（にほんごがっこう） — Trường tiếng Nhật",
+    "kanji": "日本語学校"
+  },
+  {
+    "id": "1-1-gakusei",
+    "lesson": "1.1",
+    "kana": "がくせい",
+    "vietnamese": "Học sinh, sinh viên",
+    "pronunciation": "Gạk kư sê",
+    "priority": "high",
+    "japanese": "学生（がくせい）",
+    "frontText": "学生（がくせい） — Học sinh, sinh viên",
+    "kanji": "学生"
+  },
+  {
+    "id": "1-1-sensei",
+    "lesson": "1.1",
+    "kana": "せんせい",
+    "vietnamese": "Thầy, cô",
+    "pronunciation": "Sén sê",
+    "priority": "high",
+    "japanese": "先生（せんせい）",
+    "frontText": "先生（せんせい） — Thầy, cô",
+    "kanji": "先生"
+  },
+  {
+    "id": "1-1-kyoushi",
+    "lesson": "1.1",
+    "kana": "きょうし",
+    "vietnamese": "Giáo viên",
+    "pronunciation": "Kyố shi",
+    "priority": "normal",
+    "japanese": "きょうし",
+    "frontText": "きょうし — Giáo viên"
+  },
+  {
+    "id": "1-1-kaishain",
+    "lesson": "1.1",
+    "kana": "かいしゃいん",
+    "vietnamese": "Nhân viên công ty",
+    "pronunciation": "Kai sha in",
+    "priority": "normal",
+    "japanese": "かいしゃいん",
+    "frontText": "かいしゃいん — Nhân viên công ty"
+  },
+  {
+    "id": "1-1-shain",
+    "lesson": "1.1",
+    "kana": "しゃいん",
+    "vietnamese": "Nhân viên",
+    "pronunciation": "Sha in",
+    "priority": "normal",
+    "japanese": "しゃいん",
+    "frontText": "しゃいん — Nhân viên"
+  },
+  {
+    "id": "1-1-dochira",
+    "lesson": "1.1",
+    "kana": "どちら",
+    "vietnamese": "Ở đâu",
+    "pronunciation": "Đố chi ra",
+    "priority": "normal",
+    "japanese": "どちら",
+    "frontText": "どちら — Ở đâu"
+  },
+  {
+    "id": "1-1-hajimemashite",
+    "lesson": "1.1",
+    "kana": "はじめまして",
+    "vietnamese": "Hân hạnh gặp mặt",
+    "pronunciation": "Hà ji mê mát tê",
+    "priority": "normal",
+    "japanese": "はじめまして",
+    "frontText": "はじめまして — Hân hạnh gặp mặt"
+  },
+  {
+    "id": "1-1-douzoyoroshikuonegai",
+    "lesson": "1.1",
+    "kana": "どうぞ　よろしく　おねがいします",
+    "vietnamese": "Xin được chiếu cố",
+    "pronunciation": "Đố zồ yồ rô shi kư ồ nê gai shi mát",
+    "priority": "normal",
+    "japanese": "どうぞ　よろしく　おねがいします",
+    "frontText": "どうぞ　よろしく　おねがいします — Xin được chiếu cố"
+  },
+  {
+    "id": "1-1-kochirakosoyoroshiku",
+    "lesson": "1.1",
+    "kana": "こちらこそ　よろしく　おねがいします",
+    "vietnamese": "Chính tôi mới xin được chiếu cố",
+    "pronunciation": "Kồ chi ra kô sồ, Đố zồ yồ rô shi kư ồ nê gai shi mát",
+    "priority": "normal",
+    "japanese": "こちらこそ　よろしく　おねがいします",
+    "frontText": "こちらこそ　よろしく　おねがいします — Chính tôi mới xin được chiếu cố"
+  },
+  {
+    "id": "1-1-anousumimasen",
+    "lesson": "1.1",
+    "kana": "あのう、すみません",
+    "vietnamese": "À.. xin lỗi",
+    "pronunciation": "À nô, sừ mi ma sen",
+    "priority": "normal",
+    "japanese": "あのう、すみません",
+    "frontText": "あのう、すみません — À.. xin lỗi"
+  },
+  {
+    "id": "1-1-hai",
+    "lesson": "1.1",
+    "kana": "はい",
+    "vietnamese": "Vâng, dạ",
+    "pronunciation": "Haỳ",
+    "priority": "normal",
+    "japanese": "はい",
+    "frontText": "はい — Vâng, dạ"
+  },
+  {
+    "id": "1-1-iie",
+    "lesson": "1.1",
+    "kana": "いいえ",
+    "vietnamese": "Không",
+    "pronunciation": "Ì ế",
+    "priority": "normal",
+    "japanese": "いいえ",
+    "frontText": "いいえ — Không"
+  },
+  {
+    "id": "1-1-soudesuka",
+    "lesson": "1.1",
+    "kana": "そうですか",
+    "vietnamese": "Vậy à",
+    "pronunciation": "Sô đẹt kà",
+    "priority": "normal",
+    "japanese": "そうですか",
+    "frontText": "そうですか — Vậy à"
+  },
+  {
+    "id": "1-1-anoanohito",
+    "lesson": "1.1",
+    "kana": "あのひと",
+    "vietnamese": "Người kia",
+    "pronunciation": "À nô hì tô",
+    "priority": "normal",
+    "japanese": "あの人（あのひと）",
+    "frontText": "あの人（あのひと） — Người kia",
+    "kanji": "あの人"
+  },
+  {
+    "id": "1-1-nansai",
+    "lesson": "1.1",
+    "kana": "なんさい",
+    "vietnamese": "Mấy tuổi",
+    "pronunciation": "Nán sai",
+    "priority": "high",
+    "japanese": "何才（なんさい）",
+    "frontText": "何才（なんさい） — Mấy tuổi",
+    "kanji": "何才"
+  },
+  {
+    "id": "1-1-ichi",
+    "lesson": "1.1",
+    "kana": "いち",
+    "vietnamese": "1",
+    "pronunciation": "Ì chi",
+    "priority": "high",
+    "japanese": "一（いち）",
+    "frontText": "一（いち） — 1",
+    "kanji": "一"
+  },
+  {
+    "id": "1-1-ni",
+    "lesson": "1.1",
+    "kana": "に",
+    "vietnamese": "2",
+    "pronunciation": "ni",
+    "priority": "normal",
+    "japanese": "二（に）",
+    "frontText": "二（に） — 2",
+    "kanji": "二"
+  },
+  {
+    "id": "1-1-san",
+    "lesson": "1.1",
+    "kana": "さん",
+    "vietnamese": "3",
+    "pronunciation": "San",
+    "priority": "normal",
+    "japanese": "三（さん）",
+    "frontText": "三（さん） — 3",
+    "kanji": "三"
+  },
+  {
+    "id": "1-1-yon",
+    "lesson": "1.1",
+    "kana": "よん",
+    "vietnamese": "4",
+    "pronunciation": "Yon",
+    "priority": "normal",
+    "japanese": "四（よん）",
+    "frontText": "四（よん） — 4",
+    "kanji": "四"
+  },
+  {
+    "id": "1-1-go-39",
+    "lesson": "1.1",
+    "kana": "ご",
+    "vietnamese": "5",
+    "pronunciation": "Gô",
+    "priority": "normal",
+    "japanese": "五（ご）",
+    "frontText": "五（ご） — 5",
+    "kanji": "五"
+  },
+  {
+    "id": "1-1-roku",
+    "lesson": "1.1",
+    "kana": "ろく",
+    "vietnamese": "6",
+    "pronunciation": "Rồ kư",
+    "priority": "normal",
+    "japanese": "六（ろく）",
+    "frontText": "六（ろく） — 6",
+    "kanji": "六"
+  },
+  {
+    "id": "1-1-nana",
+    "lesson": "1.1",
+    "kana": "なな",
+    "vietnamese": "7",
+    "pronunciation": "Nà na",
+    "priority": "normal",
+    "japanese": "七（なな）",
+    "frontText": "七（なな） — 7",
+    "kanji": "七"
+  },
+  {
+    "id": "1-1-hachi",
+    "lesson": "1.1",
+    "kana": "はち",
+    "vietnamese": "8",
+    "pronunciation": "Hà chi",
+    "priority": "normal",
+    "japanese": "八（はち）",
+    "frontText": "八（はち） — 8",
+    "kanji": "八"
+  },
+  {
+    "id": "1-1-kyuu",
+    "lesson": "1.1",
+    "kana": "きゅう",
+    "vietnamese": "9",
+    "pronunciation": "Khiu",
+    "priority": "normal",
+    "japanese": "九（きゅう）",
+    "frontText": "九（きゅう） — 9",
+    "kanji": "九"
+  },
+  {
+    "id": "1-1-jiu",
+    "lesson": "1.1",
+    "kana": "じゅう",
+    "vietnamese": "10",
+    "pronunciation": "Jiu",
+    "priority": "high",
+    "japanese": "十（じゅう）",
+    "frontText": "十（じゅう） — 10",
+    "kanji": "十"
+  },
+  {
+    "id": "1-1-issai",
+    "lesson": "1.1",
+    "kana": "いっさい",
+    "vietnamese": "1 Tuổi",
+    "pronunciation": "Ís sai",
+    "priority": "normal",
+    "japanese": "一才（いっさい）",
+    "frontText": "一才（いっさい） — 1 Tuổi",
+    "kanji": "一才"
+  },
+  {
+    "id": "1-1-nisai",
+    "lesson": "1.1",
+    "kana": "にさい",
+    "vietnamese": "2 Tuổi",
+    "pronunciation": "Ni sai",
+    "priority": "normal",
+    "japanese": "二才（にさい）",
+    "frontText": "二才（にさい） — 2 Tuổi",
+    "kanji": "二才"
+  },
+  {
+    "id": "1-1-sansai",
+    "lesson": "1.1",
+    "kana": "さんさい",
+    "vietnamese": "3 Tuổi",
+    "pronunciation": "San sai",
+    "priority": "normal",
+    "japanese": "三才（さんさい）",
+    "frontText": "三才（さんさい） — 3 Tuổi",
+    "kanji": "三才"
+  },
+  {
+    "id": "1-1-yonsai",
+    "lesson": "1.1",
+    "kana": "よんさい",
+    "vietnamese": "4 Tuổi",
+    "pronunciation": "Yon sai",
+    "priority": "normal",
+    "japanese": "四才（よんさい）",
+    "frontText": "四才（よんさい） — 4 Tuổi",
+    "kanji": "四才"
+  },
+  {
+    "id": "1-1-gosai",
+    "lesson": "1.1",
+    "kana": "ごさい",
+    "vietnamese": "5 Tuổi",
+    "pronunciation": "Go sai",
+    "priority": "normal",
+    "japanese": "五才（ごさい）",
+    "frontText": "五才（ごさい） — 5 Tuổi",
+    "kanji": "五才"
+  },
+  {
+    "id": "1-1-rokusai",
+    "lesson": "1.1",
+    "kana": "ろくさい",
+    "vietnamese": "6 Tuổi",
+    "pronunciation": "Rồ kư sai",
+    "priority": "normal",
+    "japanese": "六才（ろくさい）",
+    "frontText": "六才（ろくさい） — 6 Tuổi",
+    "kanji": "六才"
+  },
+  {
+    "id": "1-1-nanasai",
+    "lesson": "1.1",
+    "kana": "ななさい",
+    "vietnamese": "7 Tuổi",
+    "pronunciation": "Nà na sai",
+    "priority": "normal",
+    "japanese": "七才（ななさい）",
+    "frontText": "七才（ななさい） — 7 Tuổi",
+    "kanji": "七才"
+  },
+  {
+    "id": "1-1-hassai",
+    "lesson": "1.1",
+    "kana": "はっさい",
+    "vietnamese": "8 Tuổi",
+    "pronunciation": "Hás sai",
+    "priority": "normal",
+    "japanese": "八才（はっさい）",
+    "frontText": "八才（はっさい） — 8 Tuổi",
+    "kanji": "八才"
+  },
+  {
+    "id": "1-1-kyuusai",
+    "lesson": "1.1",
+    "kana": "きゅうさい",
+    "vietnamese": "9 Tuổi",
+    "pronunciation": "Khiu sai",
+    "priority": "normal",
+    "japanese": "九才（きゅうさい）",
+    "frontText": "九才（きゅうさい） — 9 Tuổi",
+    "kanji": "九才"
+  },
+  {
+    "id": "1-1-jissai",
+    "lesson": "1.1",
+    "kana": "じゅっさい",
+    "vietnamese": "10 Tuổi",
+    "pronunciation": "Jússai",
+    "priority": "normal",
+    "japanese": "十才（じゅっさい）",
+    "frontText": "十才（じゅっさい） — 10 Tuổi",
+    "kanji": "十才"
+  },
+  {
+    "id": "1-1-nijissaihatachi",
+    "lesson": "1.1",
+    "kana": "にじゅっさい／はたち",
+    "vietnamese": "20 Tuổi",
+    "pronunciation": "Ni Jús sai / Hà ta chi",
+    "priority": "normal",
+    "japanese": "二十才（にじゅっさい）／はたち",
+    "frontText": "二十才（にじゅっさい）／はたち — 20 Tuổi",
+    "kanji": "二十才"
+  }
+];

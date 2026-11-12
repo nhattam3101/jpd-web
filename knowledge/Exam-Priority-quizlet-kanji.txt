@@ -1,0 +1,192 @@
+私（わたし） — Tôi	Wà ta shi
+日本（にほん） — Nhật Bản	Nì hon
+～じん — Người ~	~jin
+～ご — Tiếng ~	~go
+大学（だいがく） — Đại học	Đai gá kừ
+日本語学校（にほんごがっこう） — Trường tiếng Nhật	Nì hon gô gạk kô
+学生（がくせい） — Học sinh, sinh viên	Gạk kư sê
+先生（せんせい） — Thầy, cô	Sén sê
+何才（なんさい） — Mấy tuổi	Nán sai
+一（いち） — 1	Ì chi
+十（じゅう） — 10	Jiu
+誕生日（たんじょうび） — Sinh nhật	Tan jố bì
+いつ — Khi nào	Í chư
+何月（なんがつ） — Tháng mấy	Nan gá chừ
+何日（なんにち） — Ngày mấy	Nan nì chi
+一月（いちがつ） — Tháng 1	ì chi gá chừ
+二月（にがつ） — Tháng 2	Ni gá chừ
+三月（さんがつ） — Tháng 3	San gá chừ
+四月（しがつ） — Tháng 4	Shi gá chừ
+五月（ごがつ） — Tháng 5	Gô gá chừ
+六月（ろくがつ） — Tháng 6	Rồ kư gá chừ
+七月（しちがつ） — Tháng 7	Shì chi gá chừ
+八月（はちがつ） — Tháng 8	Hà chi gá chừ
+九月（くがつ） — Tháng 9	Kư gá chừ
+十月（じゅうがつ） — Tháng 10	Jiu gá chừ
+十一月（じゅういちがつ） — Tháng 11	Jiu ì chi gá chừ
+十二月（じゅうにがつ） — Tháng 12	Jiu ni gá chừ
+一日（ついたち） — Ngày 1	Chừ í ta chi
+二日（ふつか） — Ngày 2	Fừ chư ka
+三日（みっか） — Ngày 3	Mịk ka
+四日（よっか） — Ngày 4	Yọkka
+五日（いつか） — Ngày 5	I chư kà
+六日（むいか） — Ngày 6	Mừ i ka
+七日（なのか） — Ngày 7	Nà nô ka
+八日（ようか） — Ngày 8	Yố- ka
+九日（ここのか） — Ngày 9	Kồ kô nố ka
+十日（とおか） — Ngày 10	Tô- kà
+十一日（じゅういちにち） — Ngày 11	Jiu ì chi nì chi
+十二日（じゅうににち） — Ngày 12	Jiu ni nì chi
+十三日（じゅうさんにち） — Ngày 13	Jiu san nì chi
+十四日（じゅうよっか） — Ngày 14	Jiu Yọkka
+十五日（じゅうごにち） — Ngày 15	Jiu gô nì chi
+十六日（じゅうろくにち） — Ngày 16	Jiu rồ kư nì chi
+十七日（じゅうななにち／じゅうしちにち） — Ngày 17	Jiu nà na nì chi / Jiu shì chi nì chi
+十八日（じゅうはちにち） — Ngày 18	Jiu hà chi nì chi
+十九日（じゅうくにち） — Ngày 19	Jiu kư nì chi
+二十日（はつか） — Ngày 20	Hà chư kà
+二十一日（にじゅういちにち） — Ngày 21	Ni Jiu ì chi nì chi
+二十二日（にじゅうににち） — Ngày 22	Ni jiu ni nì chi
+二十三日（にじゅうさんにち） — Ngày 23	Ni jiu san nì chi
+二十四日（にじゅうよっか） — Ngày 24	Ní jiu Yọkka
+二十五日（にじゅうごにち） — Ngày 25	Ni jiu gô nì chi
+二十六日（にじゅうろくにち） — Ngày 26	Ní jiu rồ kư nì chi
+二十七日（にじゅうななにち／にじゅうしちにち） — Ngày 27	Ní jiu nà na nì chi / Ní jiu shì chi nì chi
+二十八日（にじゅうはちにち） — Ngày 28	Ní jiu hà chi nì chi
+二十九日（にじゅうくにち） — Ngày 29	Ní jiu kư nì chi
+三十日（さんじゅうにち） — Ngày 30	San jiu nì chi
+三十一日（さんじゅういちにち） — Ngày 31	San jiu ì chi nì chi
+スポーツ — Thể thao	Sừ pố chừ
+サッカー — Đá bóng	Sák ka
+りょこう — Du lịch	Ryố kồ
+りょうり — Nấu ăn	Ryố ri
+何ですか（なんですか） — Cái gì vậy	Nan đẹt ká
+ここ（こちら） — Chỗ này (kính ngữ)	Kồ kô (kồ chi ra)
+そこ（そちら） — Chỗ đó (kính ngữ)	Sồ kô (sồ chi ra)
+あそこ（あちら） — Chỗ kia (kính ngữ)	À sồ kô (à chi ra)
+どこ（どちら） — Chỗ nào (kính ngữ)	Đố kô (đố chi ra)
+トイレ — Nhà vệ sinh	Toi rê
+レジ — Quầy tính tiền	Rế ji
+百円ショップ（ひゃくえんショップ） — Cửa hàng 100 yên	Hya kư  en shop pừ
+レストラン — Nhà hàng	Rê sừ tô ràn
+本（ほん） — Sách	Hon
+本や（ほんや） — Tiệm sách	Hon ya
+カメラ — Máy ảnh	Cá mê ra
+パソコン — Máy tính cá nhân	Pa sô kon
+トイレットペーパー — Giấy vệ sinh	Toi rét tô pê – pà -
+水（みず） — Nước	Mì zư
+一かい（いっかい） — Tầng 1	ịk kai
+二かい（にかい） — Tầng 2	Ni kai
+三かい／さんがい（さんかい／さんがい） — Tầng 3	San kai / san gai
+四かい（よんかい） — Tầng 4	Yon kai
+五かい（ごかい） — Tầng 5	Go kai
+六かい（ろっかい） — Tầng 6	Rọk kai
+七かい（ななかい） — Tầng 7	Nana kai
+八かい／はっかい（はちかい／はっかい） — Tầng 8	Hà chi kai/ hạk kai
+九かい（きゅうかい） — Tầng 9	Khiu kai
+十かい（じゅっかい） — Tầng 10	Júk kai
+何かい／なんがい（なんかい／なんがい） — Tầng mấy?	Nán kai/ nán gai
+これ（このN） — Cái này (Cái N này)	Kồ rê (kồ nô N)
+それ（そのN） — Cái đó (Cái N đó)	Sồ rê (sồ nô N)
+あれ（あのN） — Cái kia (Cái N kia)	À rê (À nô N)
+かばん — Cặp	Kà ban
+とけい — Đồng hồ	Tồ kê
+～円（～えん） — Yên	en
+いくら？ — Bao nhiêu tiền	Í kư ra
+じゃ、Nをください — Vậy thì, hãy lấy cái N	Jà, N ố kừ đa sai
+百（ひゃく） — 100	Hya kừ
+二百（にひゃく） — 200	Ni Hya kừ
+三百（さんびゃく） — 300	Sam Bya kừ
+四百（よんひゃく） — 400	Yon Hya kừ
+五百（ごひゃく） — 500	Gô Hya kừ
+六百（ろっぴゃく） — 600	Rop pya kừ
+七百（ななひゃく） — 700	Nà na Hya kừ
+八百（はっぴゃく） — 800	Hap pya kừ
+九百（きゅうひゃく） — 900	Khiu Hya kừ
+千（せん／いっせん） — 1000	Sén (ịs sen)
+二千（にせん） — 2000	Ni sen
+三千（さんぜん） — 3000	San zen
+四千（よんせん） — 4000	Yon sen
+五千（ごせん） — 5000	Go sen
+六千（ろくせん） — 6000	Rồ kư sen
+七千（ななせん） — 7000	Nà na sen
+八千（はっせん） — 8000	Hạs sen
+九千（きゅうせん） — 9000	Khiu sen
+一万（いちまん） — 10000	Ì chi man
+二万（にまん） — 20000	Ni man
+三万（さんまん） — 30000	San man
+四万（よんまん） — 40000	Yon man
+五万（ごまん） — 50000	Gô man
+六万（ろくまん） — 60000	Rồ kư man
+七万（ななまん） — 70000	Nà na man
+八万（はちまん） — 80000	Hà chi man
+九万（きゅうまん） — 90000	Khiu man
+さかな — Cá	Sà ka na
+にく — Thịt	Nì kư
+ぶたにく — Thịt heo	Bừ ta nì kư
+とりにく — Thịt gà	Tồ ri nì kư
+ぎゅうにく — Thịt bò	Gyu nì kư
+やさい — Rau	Yà sai
+ごはん — Cơm	Gố hàn
+おちゃ — Trà	ồ cha
+だれ — Ai vậy	Đá rê
+ちゅうもん　を　おねがいします — Làm ơn cho gọi món	Chiu mon ố ồ nê gai shi mát
+一つ（ひとつ） — 1 cái	Hì tô chừ
+二つ（ふたつ） — 2 cái	Fừ ta chừ
+三つ（みっつ） — 3 cái	Mịc chư
+十（とお） — 10 cái	Tô
+いま — Bây giờ	Í mà
+ごぜん — AM	Gố zen
+ごご — PM	Gố gồ
+時間（じかん） — Thời gian	jí kàn
+月曜日（げつようび） — Thứ 2	Gề chư yố bi
+火曜日（かようび） — Thứ 3	Kà yố bi
+水曜日（すいようび） — Thứ 4	Sưi yố bi
+木曜日（もくようび） — Thứ 5	Mồ kư yố bi
+金曜日（きんようび） — Thứ 6	Kin yố bi
+土曜日（どようび） — Thứ 7	Đồ yố bi
+日曜日（にちようび） — Chủ Nhật	Nì chi yố bi
+何曜日（なんようび） — Thứ mấy	Nan yố bi
+一時（いちじ） — 1 giờ	Ì chi ji
+二時（にじ） — 2 giờ	Ni ji
+三時（さんじ） — 3 giờ	San ji
+四時（よじ） — 4 giờ	Yo ji
+五時（ごじ） — 5 giờ	Gô ji
+六時（ろくじ） — 6 giờ	Rồ kư ji
+七時（しちじ） — 7 giờ	Shi chi ji
+八時（はちじ） — 8 giờ	Hà chi ji
+九時（くじ） — 9 giờ	ku ji
+十時（じゅうじ） — 10 giờ	Jiu ji
+何時（なんじ） — Mấy giờ	Nán ji
+一分（いっぷん） — 1 phút	íp pưn
+二分（にふん） — 2 phút	Ni Fưn
+三分（さんぷん） — 3 phút	Sam pưn
+四分（よんぷん） — 4 phút	Yon pưn
+五分（ごふん） — 5 phút	Gô Fưn
+六分（ろっぷん） — 6 phút	Rop pưn
+七分（ななふん） — 7 phút	Nà na Fưn
+八分（はっぷん） — 8 phút	Hạp pưn
+九分（きゅうふん） — 9 phút	khiu Fưn
+十分（じゅっぷん） — 10 phút	Júp pưn
+三十分（さんじゅっぷん）／はん — 30 phút	San Júp Pưn / Han
+何分（なんぷん） — Mấy phút	Nán pưn
+たべます — Ăn	Tà bê más
+のみます — Uống	Nồ mi más
+みます — Xem	Mi más
+ききます — Nghe	Kì ki más
+よみます — Đọc	Yồ mi más
+べんきょうします — Học	Ben Kyố shi más
+かいます — Mua	Kai más
+します — Làm, chơi	Shi más
+はたらきます — Làm  việc	Hà ta ra ki más
+おきます — Thức dậy	ồ ki más
+ねます — Ngủ	Nê más
+いきます — Đi	Ì ki más
+きます — Đến	Ki más
+かえります — Về	Kà ê ri más
+アルバイト — Việc làm thêm	À rư bai tồ
+バスりょこう — Xe buýt du lịch	Bá sừ Ryố kồ
+スキーりょこう — Du lịch trượt tuyết	Sừ ki - Ryố kồ
+ほっかいどうりょこう — Du lịch Hokkaido	Hók kai đô Ryố kồ
+ふじさん — Núi phú sĩ	Fừ ji san
+しゅうまつ — Cuối tuần	Shiu mát chừ

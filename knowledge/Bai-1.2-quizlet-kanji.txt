@@ -1,0 +1,48 @@
+誕生日（たんじょうび） — Sinh nhật	Tan jố bì
+ブラジル — Braxin	Bừ ra ji rừ
+いつ — Khi nào	Í chư
+何月（なんがつ） — Tháng mấy	Nan gá chừ
+何日（なんにち） — Ngày mấy	Nan nì chi
+一月（いちがつ） — Tháng 1	ì chi gá chừ
+二月（にがつ） — Tháng 2	Ni gá chừ
+三月（さんがつ） — Tháng 3	San gá chừ
+四月（しがつ） — Tháng 4	Shi gá chừ
+五月（ごがつ） — Tháng 5	Gô gá chừ
+六月（ろくがつ） — Tháng 6	Rồ kư gá chừ
+七月（しちがつ） — Tháng 7	Shì chi gá chừ
+八月（はちがつ） — Tháng 8	Hà chi gá chừ
+九月（くがつ） — Tháng 9	Kư gá chừ
+十月（じゅうがつ） — Tháng 10	Jiu gá chừ
+十一月（じゅういちがつ） — Tháng 11	Jiu ì chi gá chừ
+十二月（じゅうにがつ） — Tháng 12	Jiu ni gá chừ
+一日（ついたち） — Ngày 1	Chừ í ta chi
+二日（ふつか） — Ngày 2	Fừ chư ka
+三日（みっか） — Ngày 3	Mịk ka
+四日（よっか） — Ngày 4	Yọkka
+五日（いつか） — Ngày 5	I chư kà
+六日（むいか） — Ngày 6	Mừ i ka
+七日（なのか） — Ngày 7	Nà nô ka
+八日（ようか） — Ngày 8	Yố- ka
+九日（ここのか） — Ngày 9	Kồ kô nố ka
+十日（とおか） — Ngày 10	Tô- kà
+十一日（じゅういちにち） — Ngày 11	Jiu ì chi nì chi
+十二日（じゅうににち） — Ngày 12	Jiu ni nì chi
+十三日（じゅうさんにち） — Ngày 13	Jiu san nì chi
+十四日（じゅうよっか） — Ngày 14	Jiu Yọkka
+十五日（じゅうごにち） — Ngày 15	Jiu gô nì chi
+十六日（じゅうろくにち） — Ngày 16	Jiu rồ kư nì chi
+十七日（じゅうななにち／じゅうしちにち） — Ngày 17	Jiu nà na nì chi / Jiu shì chi nì chi
+十八日（じゅうはちにち） — Ngày 18	Jiu hà chi nì chi
+十九日（じゅうくにち） — Ngày 19	Jiu kư nì chi
+二十日（はつか） — Ngày 20	Hà chư kà
+二十一日（にじゅういちにち） — Ngày 21	Ni Jiu ì chi nì chi
+二十二日（にじゅうににち） — Ngày 22	Ni jiu ni nì chi
+二十三日（にじゅうさんにち） — Ngày 23	Ni jiu san nì chi
+二十四日（にじゅうよっか） — Ngày 24	Ní jiu Yọkka
+二十五日（にじゅうごにち） — Ngày 25	Ni jiu gô nì chi
+二十六日（にじゅうろくにち） — Ngày 26	Ní jiu rồ kư nì chi
+二十七日（にじゅうななにち／にじゅうしちにち） — Ngày 27	Ní jiu nà na nì chi / Ní jiu shì chi nì chi
+二十八日（にじゅうはちにち） — Ngày 28	Ní jiu hà chi nì chi
+二十九日（にじゅうくにち） — Ngày 29	Ní jiu kư nì chi
+三十日（さんじゅうにち） — Ngày 30	San jiu nì chi
+三十一日（さんじゅういちにち） — Ngày 31	San jiu ì chi nì chi

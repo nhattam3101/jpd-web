@@ -1,0 +1,64 @@
+いま — Bây giờ	Í mà
+ごぜん — AM	Gố zen
+ごご — PM	Gố gồ
+あさ — Sáng	Á sà
+ひる — Trưa	Hì rư
+よる — Tối	Yố rừ
+まいあさ — Mỗi sáng	Mai á sà
+まいひる — Mỗi trưa	Mai hi rừ
+まいばん — Mỗi tối	Mai ban
+まいにち — Mỗi ngày	Mai nichi
+あさごはん — Cơm sáng	À sa gố hàn
+ひるごはん — Cơm trưa	Hì rư gố hàn
+ばんごはん — Cơm tối	Ban gố hàn
+ぎんこう — Ngân hàng	Gín kồ
+たいいくかん — Nhà thi đấu thể thao	Tai í kừ kan
+としょかん — Thư viện	Tồ số kàn
+びょういん — Bệnh viện	Byố in
+かいしゃ — Công ty	Kai sha
+ゆうびんきょく — Bưu điện	Yư bin kyố kừ
+コンビニ — Cửa hàng 24h	Kom bi ni
+こうえん — Công viên	Kô en
+じゅぎょう — Giờ học	Jiu gyô
+テスト — Bài test	Tế sừ tồ
+やすみ — Nghỉ	Yà sư mi
+やすみのひ — Ngày nghỉ	Yà sư mi nô hi
+やすみじかん — Thời gian nghỉ	Yà sư mi jì kàn
+ひるやすみ — Nghỉ trưa	Hì rư  Yà sư mi
+時間（じかん） — Thời gian	jí kàn
+ゴールデンウィーク — Tuần lễ vàng	Gô rư đen wí kừ
+はるやすみ — Nghỉ xuân	Hà rư yà sư mi
+あきやすみ — Nghỉ thu	Á ki yà sư mi
+なつやすみ — Nghỉ hè	Nạt chư yà sư mi
+ふゆやすみ — Nghỉ đông	Fừ yư yà sư mi
+月曜日（げつようび） — Thứ 2	Gề chư yố bi
+火曜日（かようび） — Thứ 3	Kà yố bi
+水曜日（すいようび） — Thứ 4	Sưi yố bi
+木曜日（もくようび） — Thứ 5	Mồ kư yố bi
+金曜日（きんようび） — Thứ 6	Kin yố bi
+土曜日（どようび） — Thứ 7	Đồ yố bi
+日曜日（にちようび） — Chủ Nhật	Nì chi yố bi
+何曜日（なんようび） — Thứ mấy	Nan yố bi
+一時（いちじ） — 1 giờ	Ì chi ji
+二時（にじ） — 2 giờ	Ni ji
+三時（さんじ） — 3 giờ	San ji
+四時（よじ） — 4 giờ	Yo ji
+五時（ごじ） — 5 giờ	Gô ji
+六時（ろくじ） — 6 giờ	Rồ kư ji
+七時（しちじ） — 7 giờ	Shi chi ji
+八時（はちじ） — 8 giờ	Hà chi ji
+九時（くじ） — 9 giờ	ku ji
+十時（じゅうじ） — 10 giờ	Jiu ji
+何時（なんじ） — Mấy giờ	Nán ji
+一分（いっぷん） — 1 phút	íp pưn
+二分（にふん） — 2 phút	Ni Fưn
+三分（さんぷん） — 3 phút	Sam pưn
+四分（よんぷん） — 4 phút	Yon pưn
+五分（ごふん） — 5 phút	Gô Fưn
+六分（ろっぷん） — 6 phút	Rop pưn
+七分（ななふん） — 7 phút	Nà na Fưn
+八分（はっぷん） — 8 phút	Hạp pưn
+九分（きゅうふん） — 9 phút	khiu Fưn
+十分（じゅっぷん） — 10 phút	Júp pưn
+三十分（さんじゅっぷん）／はん — 30 phút	San Júp Pưn / Han
+何分（なんぷん） — Mấy phút	Nán pưn

@@ -1,0 +1,49 @@
+たんじょうび — Sinh nhật	Tan jố bì
+ブラジル — Braxin	Bừ ra ji rừ
+いつ — Khi nào	Í chư
+なんがつ — Tháng mấy	Nan gá chừ
+なんにち — Ngày mấy	Nan nì chi
+いちがつ — Tháng 1	ì chi gá chừ
+にがつ — Tháng 2	Ni gá chừ
+さんがつ — Tháng 3	San gá chừ
+しがつ — Tháng 4	Shi gá chừ
+ごがつ — Tháng 5	Gô gá chừ
+ろくがつ — Tháng 6	Rồ kư gá chừ
+しちがつ — Tháng 7	Shì chi gá chừ
+はちがつ — Tháng 8	Hà chi gá chừ
+くがつ — Tháng 9	Kư gá chừ
+じゅうがつ — Tháng 10	Jiu gá chừ
+じゅういちがつ — Tháng 11	Jiu ì chi gá chừ
+じゅうにがつ — Tháng 12	Jiu ni gá chừ
+ついたち — Ngày 1	Chừ í ta chi
+ふつか — Ngày 2	Fừ chư ka
+みっか — Ngày 3	Mịk ka
+よっか — Ngày 4	Yọkka
+いつか — Ngày 5	I chư kà
+むいか — Ngày 6	Mừ i ka
+なのか — Ngày 7	Nà nô ka
+ようか — Ngày 8	Yố- ka
+ここのか — Ngày 9	Kồ kô nố ka
+とおか — Ngày 10	Tô- kà
+じゅういちにち — Ngày 11	Jiu ì chi nì chi
+じゅうににち — Ngày 12	Jiu ni nì chi
+じゅうさんにち — Ngày 13	Jiu san nì chi
+じゅうよっか — Ngày 14	Jiu Yọkka
+じゅうごにち — Ngày 15	Jiu gô nì chi
+じゅうろくにち — Ngày 16	Jiu rồ kư nì chi
+じゅうななにちじゅうしちにち — Ngày 17	Jiu nà na nì chiJiu shì chi nì chi
+じゅうはちにち — Ngày 18	Jiu hà chi nì chi
+じゅうくにち — Ngày 19	Jiu kư nì chi
+はつか — Ngày 20	Hà chư kà
+にじゅういちにち — Ngày 21	Ni Jiu ì chi nì chi
+にじゅうににち — Ngày 22	Ni jiu ni nì chi
+にじゅうさんにち — Ngày 23	Ni jiu san nì chi
+にじゅうよっか — Ngày 24	Ní jiu Yọkka
+にじゅうごにち — Ngày 25	Ni jiu gô nì chi
+にじゅうろくにち — Ngày 26	Ní jiu rồ kư nì chi
+にじゅうななにちにじゅうしちにち — Ngày 27	Ní jiu nà na nì chiNí jiu shì chi nì chi
+にじゅうはちにち — Ngày 28	Ní jiu hà chi nì chi
+にじゅうくにち — Ngày 29	Ní jiu kư nì chi
+さんじゅうにち — Ngày 30	San jiu nì chi
+さんじゅういちにち — Ngày 31	San jiu ì chi nì chi
+なんにち — Ngày mấy	Nán nì chi

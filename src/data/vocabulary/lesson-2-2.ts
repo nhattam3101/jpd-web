@@ -1,0 +1,462 @@
+import { VocabularyCard, FlashCard } from '../../types';
+
+export const lesson2_2Cards: (VocabularyCard & FlashCard)[] = [
+  {
+    "id": "2-2-korekonon",
+    "lesson": "2.2",
+    "kana": "これ（このN）",
+    "vietnamese": "Cái này (Cái N này)",
+    "pronunciation": "Kồ rê (kồ nô N)",
+    "priority": "high",
+    "japanese": "これ（このN）",
+    "frontText": "これ（このN） — Cái này (Cái N này)"
+  },
+  {
+    "id": "2-2-soresonon",
+    "lesson": "2.2",
+    "kana": "それ（そのN）",
+    "vietnamese": "Cái đó (Cái N đó)",
+    "pronunciation": "Sồ rê (sồ nô N)",
+    "priority": "high",
+    "japanese": "それ（そのN）",
+    "frontText": "それ（そのN） — Cái đó (Cái N đó)"
+  },
+  {
+    "id": "2-2-areanon",
+    "lesson": "2.2",
+    "kana": "あれ（あのN）",
+    "vietnamese": "Cái kia (Cái N kia)",
+    "pronunciation": "À rê (À nô N)",
+    "priority": "high",
+    "japanese": "あれ（あのN）",
+    "frontText": "あれ（あのN） — Cái kia (Cái N kia)"
+  },
+  {
+    "id": "2-2-kaban",
+    "lesson": "2.2",
+    "kana": "かばん",
+    "vietnamese": "Cặp",
+    "pronunciation": "Kà ban",
+    "priority": "high",
+    "japanese": "かばん",
+    "frontText": "かばん — Cặp"
+  },
+  {
+    "id": "2-2-zubon",
+    "lesson": "2.2",
+    "kana": "ズボン",
+    "vietnamese": "Quần",
+    "pronunciation": "Zứ pon",
+    "priority": "normal",
+    "japanese": "ズボン",
+    "frontText": "ズボン — Quần"
+  },
+  {
+    "id": "2-2-shatsu",
+    "lesson": "2.2",
+    "kana": "シャツ",
+    "vietnamese": "Áo sơ mi",
+    "pronunciation": "Shá chừ",
+    "priority": "normal",
+    "japanese": "シャツ",
+    "frontText": "シャツ — Áo sơ mi"
+  },
+  {
+    "id": "2-2-tshatsu",
+    "lesson": "2.2",
+    "kana": "Tシャツ",
+    "vietnamese": "Áo thun",
+    "pronunciation": "T Shá chừ",
+    "priority": "normal",
+    "japanese": "Tシャツ",
+    "frontText": "Tシャツ — Áo thun"
+  },
+  {
+    "id": "2-2-toi",
+    "lesson": "2.2",
+    "kana": "とけい",
+    "vietnamese": "Đồng hồ",
+    "pronunciation": "Tồ kê",
+    "priority": "high",
+    "japanese": "とけい",
+    "frontText": "とけい — Đồng hồ"
+  },
+  {
+    "id": "2-2-en",
+    "lesson": "2.2",
+    "kana": "～えん",
+    "vietnamese": "Yên",
+    "pronunciation": "en",
+    "priority": "high",
+    "japanese": "～円（～えん）",
+    "frontText": "～円（～えん） — Yên",
+    "kanji": "～円"
+  },
+  {
+    "id": "2-2-doru",
+    "lesson": "2.2",
+    "kana": "～ドル",
+    "vietnamese": "Đô la",
+    "pronunciation": "Đố rừ",
+    "priority": "normal",
+    "japanese": "～ドル",
+    "frontText": "～ドル — Đô la"
+  },
+  {
+    "id": "2-2-don",
+    "lesson": "2.2",
+    "kana": "～ドン",
+    "vietnamese": "Việt Nam Đồng",
+    "pronunciation": "Đon",
+    "priority": "normal",
+    "japanese": "～ドン",
+    "frontText": "～ドン — Việt Nam Đồng"
+  },
+  {
+    "id": "2-2-ikura",
+    "lesson": "2.2",
+    "kana": "いくら？",
+    "vietnamese": "Bao nhiêu tiền",
+    "pronunciation": "Í kư ra",
+    "priority": "high",
+    "japanese": "いくら？",
+    "frontText": "いくら？ — Bao nhiêu tiền"
+  },
+  {
+    "id": "2-2-janwokudasai",
+    "lesson": "2.2",
+    "kana": "じゃ、Nをください",
+    "vietnamese": "Vậy thì, hãy lấy cái N",
+    "pronunciation": "Jà, N ố kừ đa sai",
+    "priority": "high",
+    "japanese": "じゃ、Nをください",
+    "frontText": "じゃ、Nをください — Vậy thì, hãy lấy cái N"
+  },
+  {
+    "id": "2-2-indo",
+    "lesson": "2.2",
+    "kana": "インド",
+    "vietnamese": "Ấn Độ",
+    "pronunciation": "Ín đồ",
+    "priority": "normal",
+    "japanese": "インド",
+    "frontText": "インド — Ấn Độ"
+  },
+  {
+    "id": "2-2-doitsu",
+    "lesson": "2.2",
+    "kana": "ドイツ",
+    "vietnamese": "Đức",
+    "pronunciation": "Đô í chừ",
+    "priority": "normal",
+    "japanese": "ドイツ",
+    "frontText": "ドイツ — Đức"
+  },
+  {
+    "id": "2-2-furansu",
+    "lesson": "2.2",
+    "kana": "フランス",
+    "vietnamese": "Pháp",
+    "pronunciation": "Fừ ran sừ",
+    "priority": "normal",
+    "japanese": "フランス",
+    "frontText": "フランス — Pháp"
+  },
+  {
+    "id": "2-2-hyaku",
+    "lesson": "2.2",
+    "kana": "ひゃく",
+    "vietnamese": "100",
+    "pronunciation": "Hya kừ",
+    "priority": "high",
+    "japanese": "百（ひゃく）",
+    "frontText": "百（ひゃく） — 100",
+    "kanji": "百"
+  },
+  {
+    "id": "2-2-nihyaku",
+    "lesson": "2.2",
+    "kana": "にひゃく",
+    "vietnamese": "200",
+    "pronunciation": "Ni Hya kừ",
+    "priority": "high",
+    "japanese": "二百（にひゃく）",
+    "frontText": "二百（にひゃく） — 200",
+    "kanji": "二百"
+  },
+  {
+    "id": "2-2-sanbyaku",
+    "lesson": "2.2",
+    "kana": "さんびゃく",
+    "vietnamese": "300",
+    "pronunciation": "Sam Bya kừ",
+    "priority": "high",
+    "japanese": "三百（さんびゃく）",
+    "frontText": "三百（さんびゃく） — 300",
+    "kanji": "三百"
+  },
+  {
+    "id": "2-2-yonhyaku",
+    "lesson": "2.2",
+    "kana": "よんひゃく",
+    "vietnamese": "400",
+    "pronunciation": "Yon Hya kừ",
+    "priority": "high",
+    "japanese": "四百（よんひゃく）",
+    "frontText": "四百（よんひゃく） — 400",
+    "kanji": "四百"
+  },
+  {
+    "id": "2-2-gohyaku",
+    "lesson": "2.2",
+    "kana": "ごひゃく",
+    "vietnamese": "500",
+    "pronunciation": "Gô Hya kừ",
+    "priority": "high",
+    "japanese": "五百（ごひゃく）",
+    "frontText": "五百（ごひゃく） — 500",
+    "kanji": "五百"
+  },
+  {
+    "id": "2-2-roppyaku",
+    "lesson": "2.2",
+    "kana": "ろっぴゃく",
+    "vietnamese": "600",
+    "pronunciation": "Rop pya kừ",
+    "priority": "high",
+    "japanese": "六百（ろっぴゃく）",
+    "frontText": "六百（ろっぴゃく） — 600",
+    "kanji": "六百"
+  },
+  {
+    "id": "2-2-nanahyaku",
+    "lesson": "2.2",
+    "kana": "ななひゃく",
+    "vietnamese": "700",
+    "pronunciation": "Nà na Hya kừ",
+    "priority": "high",
+    "japanese": "七百（ななひゃく）",
+    "frontText": "七百（ななひゃく） — 700",
+    "kanji": "七百"
+  },
+  {
+    "id": "2-2-happyaku",
+    "lesson": "2.2",
+    "kana": "はっぴゃく",
+    "vietnamese": "800",
+    "pronunciation": "Hap pya kừ",
+    "priority": "high",
+    "japanese": "八百（はっぴゃく）",
+    "frontText": "八百（はっぴゃく） — 800",
+    "kanji": "八百"
+  },
+  {
+    "id": "2-2-kyuuhyaku",
+    "lesson": "2.2",
+    "kana": "きゅうひゃく",
+    "vietnamese": "900",
+    "pronunciation": "Khiu Hya kừ",
+    "priority": "high",
+    "japanese": "九百（きゅうひゃく）",
+    "frontText": "九百（きゅうひゃく） — 900",
+    "kanji": "九百"
+  },
+  {
+    "id": "2-2-senissen",
+    "lesson": "2.2",
+    "kana": "せん／いっせん",
+    "vietnamese": "1000",
+    "pronunciation": "Sén (ịs sen)",
+    "priority": "high",
+    "japanese": "千（せん／いっせん）",
+    "frontText": "千（せん／いっせん） — 1000",
+    "kanji": "千"
+  },
+  {
+    "id": "2-2-nisen",
+    "lesson": "2.2",
+    "kana": "にせん",
+    "vietnamese": "2000",
+    "pronunciation": "Ni sen",
+    "priority": "high",
+    "japanese": "二千（にせん）",
+    "frontText": "二千（にせん） — 2000",
+    "kanji": "二千"
+  },
+  {
+    "id": "2-2-sanzen",
+    "lesson": "2.2",
+    "kana": "さんぜん",
+    "vietnamese": "3000",
+    "pronunciation": "San zen",
+    "priority": "high",
+    "japanese": "三千（さんぜん）",
+    "frontText": "三千（さんぜん） — 3000",
+    "kanji": "三千"
+  },
+  {
+    "id": "2-2-yonsen",
+    "lesson": "2.2",
+    "kana": "よんせん",
+    "vietnamese": "4000",
+    "pronunciation": "Yon sen",
+    "priority": "high",
+    "japanese": "四千（よんせん）",
+    "frontText": "四千（よんせん） — 4000",
+    "kanji": "四千"
+  },
+  {
+    "id": "2-2-gosen",
+    "lesson": "2.2",
+    "kana": "ごせん",
+    "vietnamese": "5000",
+    "pronunciation": "Go sen",
+    "priority": "high",
+    "japanese": "五千（ごせん）",
+    "frontText": "五千（ごせん） — 5000",
+    "kanji": "五千"
+  },
+  {
+    "id": "2-2-rokusen",
+    "lesson": "2.2",
+    "kana": "ろくせん",
+    "vietnamese": "6000",
+    "pronunciation": "Rồ kư sen",
+    "priority": "high",
+    "japanese": "六千（ろくせん）",
+    "frontText": "六千（ろくせん） — 6000",
+    "kanji": "六千"
+  },
+  {
+    "id": "2-2-nanasen",
+    "lesson": "2.2",
+    "kana": "ななせん",
+    "vietnamese": "7000",
+    "pronunciation": "Nà na sen",
+    "priority": "high",
+    "japanese": "七千（ななせん）",
+    "frontText": "七千（ななせん） — 7000",
+    "kanji": "七千"
+  },
+  {
+    "id": "2-2-hassen",
+    "lesson": "2.2",
+    "kana": "はっせん",
+    "vietnamese": "8000",
+    "pronunciation": "Hạs sen",
+    "priority": "high",
+    "japanese": "八千（はっせん）",
+    "frontText": "八千（はっせん） — 8000",
+    "kanji": "八千"
+  },
+  {
+    "id": "2-2-kyuusen",
+    "lesson": "2.2",
+    "kana": "きゅうせん",
+    "vietnamese": "9000",
+    "pronunciation": "Khiu sen",
+    "priority": "high",
+    "japanese": "九千（きゅうせん）",
+    "frontText": "九千（きゅうせん） — 9000",
+    "kanji": "九千"
+  },
+  {
+    "id": "2-2-ichiman",
+    "lesson": "2.2",
+    "kana": "いちまん",
+    "vietnamese": "10000",
+    "pronunciation": "Ì chi man",
+    "priority": "high",
+    "japanese": "一万（いちまん）",
+    "frontText": "一万（いちまん） — 10000",
+    "kanji": "一万"
+  },
+  {
+    "id": "2-2-niman",
+    "lesson": "2.2",
+    "kana": "にまん",
+    "vietnamese": "20000",
+    "pronunciation": "Ni man",
+    "priority": "high",
+    "japanese": "二万（にまん）",
+    "frontText": "二万（にまん） — 20000",
+    "kanji": "二万"
+  },
+  {
+    "id": "2-2-sanman",
+    "lesson": "2.2",
+    "kana": "さんまん",
+    "vietnamese": "30000",
+    "pronunciation": "San man",
+    "priority": "high",
+    "japanese": "三万（さんまん）",
+    "frontText": "三万（さんまん） — 30000",
+    "kanji": "三万"
+  },
+  {
+    "id": "2-2-yonman",
+    "lesson": "2.2",
+    "kana": "よんまん",
+    "vietnamese": "40000",
+    "pronunciation": "Yon man",
+    "priority": "high",
+    "japanese": "四万（よんまん）",
+    "frontText": "四万（よんまん） — 40000",
+    "kanji": "四万"
+  },
+  {
+    "id": "2-2-goman",
+    "lesson": "2.2",
+    "kana": "ごまん",
+    "vietnamese": "50000",
+    "pronunciation": "Gô man",
+    "priority": "high",
+    "japanese": "五万（ごまん）",
+    "frontText": "五万（ごまん） — 50000",
+    "kanji": "五万"
+  },
+  {
+    "id": "2-2-rokuman",
+    "lesson": "2.2",
+    "kana": "ろくまん",
+    "vietnamese": "60000",
+    "pronunciation": "Rồ kư man",
+    "priority": "high",
+    "japanese": "六万（ろくまん）",
+    "frontText": "六万（ろくまん） — 60000",
+    "kanji": "六万"
+  },
+  {
+    "id": "2-2-nanaman",
+    "lesson": "2.2",
+    "kana": "ななまん",
+    "vietnamese": "70000",
+    "pronunciation": "Nà na man",
+    "priority": "high",
+    "japanese": "七万（ななまん）",
+    "frontText": "七万（ななまん） — 70000",
+    "kanji": "七万"
+  },
+  {
+    "id": "2-2-hachiman",
+    "lesson": "2.2",
+    "kana": "はちまん",
+    "vietnamese": "80000",
+    "pronunciation": "Hà chi man",
+    "priority": "high",
+    "japanese": "八万（はちまん）",
+    "frontText": "八万（はちまん） — 80000",
+    "kanji": "八万"
+  },
+  {
+    "id": "2-2-kyuuman",
+    "lesson": "2.2",
+    "kana": "きゅうまん",
+    "vietnamese": "90000",
+    "pronunciation": "Khiu man",
+    "priority": "high",
+    "japanese": "九万（きゅうまん）",
+    "frontText": "九万（きゅうまん） — 90000",
+    "kanji": "九万"
+  }
+];

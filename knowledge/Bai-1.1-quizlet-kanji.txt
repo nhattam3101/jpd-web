@@ -1,0 +1,55 @@
+私（わたし） — Tôi	Wà ta shi
+(お)なまえ — Tên	ồ nà ma ê
+(お)くに — Đất nước	ồ kừ ni
+(お)しごと — Công việc	ồ shí gô tồ
+ベトナム — Việt Nam	Bề tô na mư
+日本（にほん） — Nhật Bản	Nì hon
+アメリカ — Mỹ	À mế ri ka
+イタリア — Ý	Ì ta ri a
+オーストラリア — Úc	ố sừ tô ra ri à
+かんこく — Hàn Quốc	Kan kố kừ
+タイ — Thái	Tai
+ちゅうごく — Trung Quốc	Chiu gố kừ
+ロシア — Nga	Rố shi a
+～じん — Người ~	~jin
+～ご — Tiếng ~	~go
+えいご — Tiếng Anh	ế gồ
+こうこう — Cấp 3	Kố kồ
+大学（だいがく） — Đại học	Đai gá kừ
+日本語学校（にほんごがっこう） — Trường tiếng Nhật	Nì hon gô gạk kô
+学生（がくせい） — Học sinh, sinh viên	Gạk kư sê
+先生（せんせい） — Thầy, cô	Sén sê
+きょうし — Giáo viên	Kyố shi
+かいしゃいん — Nhân viên công ty	Kai sha in
+しゃいん — Nhân viên	Sha in
+どちら — Ở đâu	Đố chi ra
+はじめまして — Hân hạnh gặp mặt	Hà ji mê mát tê
+どうぞ　よろしく　おねがいします — Xin được chiếu cố	Đố zồ yồ rô shi kư ồ nê gai shi mát
+こちらこそ　よろしく　おねがいします — Chính tôi mới xin được chiếu cố	Kồ chi ra kô sồ, Đố zồ yồ rô shi kư ồ nê gai shi mát
+あのう、すみません — À.. xin lỗi	À nô, sừ mi ma sen
+はい — Vâng, dạ	Haỳ
+いいえ — Không	Ì ế
+そうですか — Vậy à	Sô đẹt kà
+あの人（あのひと） — Người kia	À nô hì tô
+何才（なんさい） — Mấy tuổi	Nán sai
+一（いち） — 1	Ì chi
+二（に） — 2	ni
+三（さん） — 3	San
+四（よん） — 4	Yon
+五（ご） — 5	Gô
+六（ろく） — 6	Rồ kư
+七（なな） — 7	Nà na
+八（はち） — 8	Hà chi
+九（きゅう） — 9	Khiu
+十（じゅう） — 10	Jiu
+一才（いっさい） — 1 Tuổi	Ís sai
+二才（にさい） — 2 Tuổi	Ni sai
+三才（さんさい） — 3 Tuổi	San sai
+四才（よんさい） — 4 Tuổi	Yon sai
+五才（ごさい） — 5 Tuổi	Go sai
+六才（ろくさい） — 6 Tuổi	Rồ kư sai
+七才（ななさい） — 7 Tuổi	Nà na sai
+八才（はっさい） — 8 Tuổi	Hás sai
+九才（きゅうさい） — 9 Tuổi	Khiu sai
+十才（じゅっさい） — 10 Tuổi	Jússai
+二十才（にじゅっさい）／はたち — 20 Tuổi	Ni Jús sai / Hà ta chi

@@ -1,0 +1,49 @@
+ここ（こちら） — Chỗ này (kính ngữ)	Kồ kô (kồ chi ra)
+そこ（そちら） — Chỗ đó (kính ngữ)	Sồ kô (sồ chi ra)
+あそこ（あちら） — Chỗ kia (kính ngữ)	À sồ kô (à chi ra)
+どこ（どちら） — Chỗ nào (kính ngữ)	Đố kô (đố chi ra)
+インフォメーション — Quầy thông tin	In fô mế sòn
+ATM — ATM	ATM
+エスカレーター — Thang cuốn	Ét sừ ka rế tà
+エレベーター — Thang máy	ề rế bế ta
+きつえんじょ — Nơi hút thuốc	Kì chư en jồ
+トイレ — Nhà vệ sinh	Toi rê
+レジ — Quầy tính tiền	Rế ji
+きっさてん — Quán nước	Kịt sa ten
+スーパー — Siêu thị	Sứ pà
+百円ショップ（ひゃくえんショップ） — Cửa hàng 100 yên	Hya kư  en shop pừ
+レストラン — Nhà hàng	Rê sừ tô ràn
+ちか — Tầng hầm	Chì ka
+くつ — Giày	Kừ chư
+本（ほん） — Sách	Hon
+ケーキ — Bánh kem	Kế ki
+パン — Bánh mì	Pan
+サカイでんき — Điện Sakai	Sakai denki
+～や — Tiệm ~	~ya
+くつや — Tiệm giày	Kừ chư ya
+本や（ほんや） — Tiệm sách	Hon ya
+カメラ — Máy ảnh	Cá mê ra
+けいたいでんわ — Điện thoại di động	Kê tai đén wà
+でんしじしょ — Kim từ điển	Đén shi jí sồ
+パソコン — Máy tính cá nhân	Pa sô kon
+けしゴム — Cục tẩy	Kề shi gô mừ
+ペン — Bút bi	Pen
+トイレットペーパー — Giấy vệ sinh	Toi rét tô pê – pà -
+あぶら — Dầu ăn	À bư ra
+こめ — Gạo	Kồ mê
+たまご — Trứng	Tà ma gồ
+水（みず） — Nước	Mì zư
+てんいん — Nhân viên	Tén in
+いらっしゃいませ — Kính chào quý khách	I ras shai  ma sê
+（どうも）ありがとう　ございます — Cám ơn (rất nhiều)	Đố mồ a rí ga tô gồ zai mát
+一かい（いっかい） — Tầng 1	ịk kai
+二かい（にかい） — Tầng 2	Ni kai
+三かい／さんがい（さんかい／さんがい） — Tầng 3	San kai / san gai
+四かい（よんかい） — Tầng 4	Yon kai
+五かい（ごかい） — Tầng 5	Go kai
+六かい（ろっかい） — Tầng 6	Rọk kai
+七かい（ななかい） — Tầng 7	Nana kai
+八かい／はっかい（はちかい／はっかい） — Tầng 8	Hà chi kai/ hạk kai
+九かい（きゅうかい） — Tầng 9	Khiu kai
+十かい（じゅっかい） — Tầng 10	Júk kai
+何かい／なんがい（なんかい／なんがい） — Tầng mấy?	Nán kai/ nán gai

@@ -1,0 +1,5 @@
+HƯỚNG DẪN NHẬP QUIZLET
+
+Mở một file Bài-*.txt, sao chép toàn bộ nội dung và dán vào ô Nhập dữ liệu của Quizlet. Chọn Tab giữa thuật ngữ và định nghĩa, Dòng mới giữa các thẻ. Kiểm tra phần xem trước rồi nhập.
+
+Cột thuật ngữ: tiếng Nhật và nghĩa tiếng Việt. Cột định nghĩa: cách đọc theo tài liệu gốc. Đây là phiên âm gần đúng theo tiếng Việt, không phải romaji chuẩn. Dữ liệu lấy từ ba file Tu vung 1–3-Romaji.docx; một số mục có thể trùng hoặc có lỗi trong tài liệu gốc.
