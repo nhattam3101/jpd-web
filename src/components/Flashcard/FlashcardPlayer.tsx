@@ -307,20 +307,12 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
                   {cardParts?.kanji}
                 </div>
 
-                {/* Furigana / Reading */}
+                {/* Japanese reading stays on the prompt side. */}
                 {cardParts?.kana && (
-                  <div className="text-base sm:text-lg font-medium text-ink-pencil font-jp mb-6">
+                  <div className="text-base sm:text-lg font-medium text-ink-pencil font-jp mt-3">
                     {cardParts.kana}
                   </div>
                 )}
-
-                {/* Subtle Divider Rule */}
-                <div className="w-14 h-1 rounded-full bg-mint mx-auto my-5" />
-
-                {/* Vietnamese Meaning */}
-                <div className="text-lg sm:text-xl font-medium text-ink-light">
-                  {currentCard?.vietnamese}
-                </div>
               </div>
 
               {/* Footer Hint */}
@@ -331,23 +323,28 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
             </div>
 
             {/* BACK FACE (Pronunciation according to Note) */}
-            <div className="flashcard-face flashcard-back study-panel absolute w-full h-full backface-hidden rotate-y-180 rounded-2xl p-7 sm:p-10 flex flex-col justify-between">
+            <div className="flashcard-face flashcard-back study-panel absolute w-full h-full backface-hidden rounded-2xl p-7 sm:p-10 flex flex-col justify-between">
               <div className="flex justify-between items-center text-xs text-ink-muted">
                 <span className="font-medium tracking-wide">CÁCH ĐỌC (NOTE IPAD)</span>
                 <span>{currentCard?.lesson}</span>
               </div>
 
-              {/* Pronunciation Text */}
-              <div className="text-center my-auto px-4">
-                <span className="text-xs font-medium text-ink-muted block mb-2">Phiên âm:</span>
-                <div className="text-3xl sm:text-4xl font-bold tracking-wide text-aizome mb-4 font-sans">
+              <div className="text-center my-auto px-2 sm:px-4">
+                <span className="text-xs font-semibold text-ink-muted block mb-2">PHIÊN ÂM KIỂU TIẾNG VIỆT</span>
+                <div className="text-3xl sm:text-4xl font-bold tracking-wide text-aizome font-sans">
                   {currentCard?.pronunciation}
                 </div>
 
-                <div className="pt-4 border-t border-[#D8CDB8] inline-block text-xs sm:text-sm text-ink-pencil font-jp">
-                  <span>{currentCard?.japanese}</span>
-                  <span className="mx-2 text-ink-muted">&bull;</span>
-                  <span className="text-ink">{currentCard?.vietnamese}</span>
+                <div className="w-14 h-1 rounded-full bg-[#D8CDB8] mx-auto my-5" />
+
+                <div>
+                  <span className="text-xs font-semibold text-ink-muted block mb-1.5">NGHĨA TIẾNG VIỆT</span>
+                  <div className="text-xl sm:text-2xl font-bold text-ink">
+                    {currentCard?.vietnamese}
+                  </div>
+                  <div className="mt-3 text-sm text-ink-pencil font-jp">
+                    {currentCard?.japanese}
+                  </div>
                 </div>
               </div>
 
