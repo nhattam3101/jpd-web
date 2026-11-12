@@ -4,16 +4,28 @@
 
 @layer base {
   :root {
-    --bg-paper: #FBFBFA;
-    --surface-card: #FFFFFF;
-    --border-rule: #E7E5E0;
-    --text-primary: #191817;
-    --text-secondary: #605E59;
+    --color-forest: #5D7B6F;
+    --color-sage: #A4C3A2;
+    --color-mint: #B0D4B8;
+    --color-sand: #EAE7D6;
+    --color-aqua: #D7F9FA;
+    --bg-paper: #EAE7D6;
+    --surface-card: #F9FAF4;
+    --surface-soft: #E2E8D9;
+    --border-rule: #C8D2C1;
+    --text-primary: #23342E;
+    --text-secondary: #465D54;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html {
+    background: var(--bg-paper);
   }
 
   body {
-    background-color: #FBFBFA;
-    color: #191817;
+    margin: 0;
+    background-color: var(--bg-paper);
+    color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
@@ -21,8 +33,17 @@
 
   /* Accessible focus rings */
   :focus-visible {
-    outline: 2px solid #1E2B37;
-    outline-offset: 2px;
+    outline: 3px solid #5D7B6F;
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: #B0D4B8;
+    color: #23342E;
+  }
+
+  button, select {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -40,6 +61,104 @@
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
+
+  .duration-250 {
+    transition-duration: 420ms;
+  }
+}
+
+.app-surface {
+  background:
+    radial-gradient(circle at 8% 8%, rgba(215, 249, 250, 0.72), transparent 30rem),
+    radial-gradient(circle at 92% 28%, rgba(176, 212, 184, 0.42), transparent 28rem),
+    var(--bg-paper);
+}
+
+.app-view {
+  animation: view-enter 520ms var(--ease-out) both;
+}
+
+.interactive-lift {
+  transition: transform 260ms var(--ease-out), box-shadow 260ms var(--ease-out), border-color 200ms ease, background-color 200ms ease;
+}
+
+.interactive-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 46px -24px rgba(55, 77, 67, 0.52);
+}
+
+.interactive-lift:active {
+  transform: translateY(-1px) scale(0.985);
+}
+
+.study-panel {
+  box-shadow: 0 18px 48px -30px rgba(45, 70, 59, 0.5);
+}
+
+.reveal-answer {
+  animation: answer-reveal 360ms var(--ease-out) both;
+}
+
+.flashcard-swap {
+  animation: card-swap 420ms var(--ease-out) both;
+}
+
+.flashcard-stage {
+  perspective: 1200px;
+  perspective-origin: 50% 45%;
+}
+
+.flashcard-flipper {
+  transition: transform 560ms cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+.flashcard-stage:hover .flashcard-flipper:not(.rotate-y-180) {
+  transform: translateY(-3px) rotateX(1deg);
+}
+
+.flashcard-face {
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.flashcard-face::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(130deg, rgba(255, 255, 255, 0.34), transparent 38%);
+  opacity: 0.7;
+}
+
+.flashcard-back {
+  background: #F3EBDD;
+  border: 1px solid #D8CDB8;
+  box-shadow: 0 18px 48px -30px rgba(85, 70, 45, 0.46);
+}
+
+.exam-step {
+  animation: exam-step-enter 460ms var(--ease-out) both;
+}
+
+@keyframes view-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes answer-reveal {
+  from { opacity: 0; transform: translateY(8px); clip-path: inset(0 0 18% 0 round 12px); }
+  to { opacity: 1; transform: translateY(0); clip-path: inset(0 round 12px); }
+}
+
+@keyframes card-swap {
+  from { opacity: 0.45; transform: translateX(10px) scale(0.985); filter: blur(2px); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes exam-step-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Quiet Japanese lettering behind the home study desk. */
@@ -54,7 +173,7 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-  color: #1E2B37;
+  color: #5D7B6F;
 }
 
 .home-japanese-character {
@@ -62,7 +181,7 @@
   font-family: 'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
   font-size: clamp(4rem, 9vw, 8rem);
   line-height: 1;
-  opacity: 0.06;
+  opacity: 0.075;
   user-select: none;
   animation: home-character-drift 18s ease-in-out infinite alternate;
 }
@@ -78,8 +197,8 @@
 .home-japanese-character-9 { top: 91%; left: 48%; animation-duration: 18s; animation-delay: -13s; }
 
 @keyframes home-character-drift {
-  from { transform: translate3d(-3px, -5px, 0); }
-  to { transform: translate3d(4px, 6px, 0); }
+  from { transform: translate3d(-4px, -6px, 0) rotate(-1deg); }
+  to { transform: translate3d(5px, 7px, 0) rotate(1deg); }
 }
 
 @media (max-width: 639px) {
@@ -93,20 +212,41 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4F3EE;
+  background: #E2E8D9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4D1C8;
+  background: #A4C3A2;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8B5AE;
+  background: #5D7B6F;
 }
 
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   .home-japanese-character {
     animation: none;
+  }
+
+  .app-view,
+  .reveal-answer,
+  .flashcard-swap,
+  .exam-step {
+    animation: none;
+  }
+
+  .interactive-lift:hover {
+    transform: none;
+  }
+
+  .flashcard-flipper,
+  .flashcard-stage:hover .flashcard-flipper:not(.rotate-y-180) {
+    transition: none;
+    transform: none;
+  }
+
+  .flashcard-flipper.rotate-y-180 {
+    transform: rotateY(180deg);
   }
 
   * {

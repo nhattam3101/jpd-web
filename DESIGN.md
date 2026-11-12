@@ -1,30 +1,26 @@
 # DESIGN.md — NihonStep Design System
 
-**Aesthetic Direction:** Japanese Editorial + Minimal Study Workspace  
-**Inspirations:** Japanese stationery (Midori MD, Kokuyo Campus, MUJI minimalism), contemporary Japanese textbooks, editorial study desk.  
-**Philosophy:** Calm, distraction-free, focused on legibility and long-duration study. Zero decorative cliché (no sakura, no anime, no torii, no purple-cyan AI gradients).
+**Aesthetic Direction:** Botanical Japanese Study Workspace
+**Inspirations:** Japanese stationery, soft botanical classrooms, contemporary language textbooks, calm editorial layouts.
+**Philosophy:** Focused and reassuring, with visible color and soft depth. The interface should feel lively without competing with study content. Avoid decorative clichés and loud dashboard styling.
 
 ---
 
 ## 1. Design Tokens
 
-### 1.1 Color Palette (Japanese Paper & Ink)
+### 1.1 Color Palette (Botanical Study)
 
 | Token | CSS Variable / Value | Role / Usage |
 | :--- | :--- | :--- |
-| **Background (Paper)** | `#FBFBFA` (`--bg-paper`) | Warm off-white paper ground, soft on the eyes during long study sessions |
-| **Surface (Card / Desk)** | `#FFFFFF` (`--surface-card`) | Crisp paper card surface |
-| **Surface Subtle** | `#F4F3EE` (`--surface-subtle`) | Secondary panels, keycaps, subtle counters |
-| **Border (Rule)** | `#E7E5E0` (`--border-rule`) | Delicate 1px notebook rule line |
-| **Border Active / Strong** | `#D4D1C8` (`--border-strong`) | Focused or hovered border |
-| **Text Primary (Sumi Ink)** | `#191817` (`--text-primary`) | Deep sumi-e charcoal black (Contrast > 14:1) |
-| **Text Secondary (Pencil)** | `#605E59` (`--text-secondary`) | Neutral pencil tone for subtext and hints (Contrast > 5.5:1) |
-| **Text Tertiary (Muted)** | `#8A8780` (`--text-tertiary`) | Subtle metadata, timestamps, shortcut keys |
-| **Primary (Aizome Indigo)** | `#1E2B37` (`--color-primary`) | Restrained deep Japanese indigo for primary buttons and active indicators |
-| **Primary Hover** | `#141E27` (`--color-primary-hover`) | Deepened indigo on hover |
-| **Accent / Urgent (Hanko Red)** | `#B93829` (`--color-hanko-red`) | Subdued vermilion stamp red for "Chưa thuộc" and critical exam timer |
-| **Success (Matcha Green)** | `#2B6E48` (`--color-matcha-green`) | Subdued tea green for "Đã thuộc" and completed states |
-| **Highlight (Washi Ochre)** | `#8A6421` (`--color-ochre`) | Refined golden ochre for Vietnamese meanings and key vocabulary |
+| **Forest** | `#5D7B6F` (`--color-forest`) | Primary actions, active navigation, focus, progress |
+| **Sage** | `#A4C3A2` (`--color-sage`) | Supporting sections, borders and study chips |
+| **Mint** | `#B0D4B8` (`--color-mint`) | Success, progress fills and soft interactive surfaces |
+| **Sand** | `#EAE7D6` (`--color-sand`) | Main page background |
+| **Aqua** | `#D7F9FA` (`--color-aqua`) | Exam, question and reading highlights |
+| **Surface** | `#F9FAF4` (`--surface-card`) | Warm light card surface; use instead of plain white |
+| **Ink** | `#23342E` (`--text-primary`) | Primary readable text |
+| **Pencil** | `#465D54` (`--text-secondary`) | Supporting copy and instructions |
+| **Urgent** | `#A34E46` | Timer warning and “chưa thuộc”; reserved for state meaning |
 
 ### 1.2 Typography Hierarchy
 
@@ -56,7 +52,7 @@ Based on a 4px/8px modular rhythm:
 
 ### 1.4 Elevation & Border Radius
 In keeping with Japanese stationery craft:
-* **No heavy drop shadows**: Use crisp 1px borders (`border-rule`) with optional subtle offset shadow: `0 1px 3px rgba(0,0,0,0.04), 0 10px 24px -4px rgba(0,0,0,0.04)`.
+* Use a border for structure and a low, green-tinted shadow only for raised study surfaces.
 * **Border Radii**:
   * Flashcards & Exam Panels: `16px` (`rounded-2xl`)
   * Buttons & Inputs: `10px` (`rounded-xl`)
@@ -64,10 +60,11 @@ In keeping with Japanese stationery craft:
   * No overly round "pill" buttons unless used for tiny tag labels.
 
 ### 1.5 Motion & Transitions
-* **Duration**: Fast, crisp transitions (150ms to 200ms).
-* **Easing**: `cubic-bezier(0.16, 1, 0.3, 1)` (smooth, decisive deceleration).
-* **Flashcard Flip**: Quick 250ms card flip with 3D preserve, subtle elevation lift.
-* **Prefers Reduced Motion**: Transitions collapse to instant opacity swap when reduced motion is requested.
+* **Controls**: 180–260ms for hover, press and state changes.
+* **Page / step entrance**: 420–520ms with `cubic-bezier(0.16, 1, 0.3, 1)`.
+* **Flashcard**: 560ms 3D flip on an isolated inner layer; card changes use a separate 420ms horizontal arrival. The back face uses warm washi `#F3EBDD` to reduce glare.
+* **Decorative type**: 16–24s transform-only drift with varied negative delays.
+* **Reduced Motion**: Spatial and looping animations are removed under `prefers-reduced-motion`.
 
 ### 1.6 Responsive Breakpoints
 * **Mobile (`<640px`)**: Full-width comfortable card margins (16px), touch targets >= 44px, sticky action bar.

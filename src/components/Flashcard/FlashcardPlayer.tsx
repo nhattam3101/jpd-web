@@ -150,12 +150,12 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
   const deckUnknownCount = rawCards.filter(c => progressMap[c.id] === 'unknown').length;
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-10 flex flex-col items-center">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-7 sm:py-12 flex flex-col items-center">
       {/* Minimal Top Control Bar */}
       <div className="w-full flex flex-wrap items-center justify-between gap-3 mb-6 sm:mb-8">
         <button
           onClick={onBackToHome}
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-ink-pencil hover:text-ink px-3 py-1.5 rounded-lg border border-rule bg-paper-pure hover:border-rule-strong shadow-paper-sm transition-colors cursor-pointer"
+          className="inline-flex min-h-10 items-center gap-1.5 text-xs font-semibold text-ink-pencil hover:text-ink px-3 py-2 rounded-xl border border-rule bg-paper-pure hover:border-aizome shadow-paper-sm transition-all cursor-pointer active:scale-[0.98]"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Trang chủ</span>
@@ -170,7 +170,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
               setCurrentIndex(0);
               setIsFlipped(false);
             }}
-            className="bg-paper-pure border border-rule text-ink text-xs sm:text-sm font-semibold rounded-lg px-3 py-1.5 shadow-paper-sm focus:outline-none focus:ring-1 focus:ring-aizome cursor-pointer"
+            className="min-h-10 bg-paper-pure border border-rule text-ink text-xs sm:text-sm font-semibold rounded-xl px-3 py-2 shadow-paper-sm cursor-pointer"
           >
             {DECKS.map(deck => (
               <option key={deck.id} value={deck.id}>
@@ -184,7 +184,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
         <div className="flex items-center gap-1.5">
           <button
             onClick={() => setOnlyUnknownMode(!onlyUnknownMode)}
-            className={`px-3 py-1.5 text-xs font-medium rounded-lg border flex items-center gap-1.5 transition-all cursor-pointer ${
+            className={`min-h-10 px-3 py-2 text-xs font-semibold rounded-xl border flex items-center gap-1.5 transition-all cursor-pointer active:scale-[0.98] ${
               onlyUnknownMode
                 ? 'bg-hanko-subtle border-hanko-border text-hanko'
                 : 'bg-paper-pure border-rule text-ink-pencil hover:text-ink shadow-paper-sm'
@@ -197,9 +197,9 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
 
           <button
             onClick={handleShuffle}
-            className={`p-1.5 text-xs rounded-lg border transition-all cursor-pointer ${
+            className={`w-10 h-10 text-xs rounded-xl border transition-all cursor-pointer inline-flex items-center justify-center active:scale-95 ${
               isShuffled
-                ? 'bg-aizome text-paper-pure border-aizome'
+                ? 'bg-aizome text-white border-aizome'
                 : 'bg-paper-pure border-rule text-ink-pencil hover:text-ink shadow-paper-sm'
             }`}
             title="Xáo trộn ngẫu nhiên"
@@ -210,7 +210,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
 
           <button
             onClick={handleResetProgress}
-            className="p-1.5 text-xs rounded-lg border bg-paper-pure border-rule text-ink-pencil hover:text-ink shadow-paper-sm transition-all cursor-pointer"
+            className="w-10 h-10 text-xs rounded-xl border bg-paper-pure border-rule text-ink-pencil hover:text-ink hover:border-aizome shadow-paper-sm transition-all cursor-pointer inline-flex items-center justify-center active:scale-95"
             title="Đặt lại tiến độ bộ thẻ này"
             aria-label="Đặt lại tiến độ"
           >
@@ -231,7 +231,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
       </div>
 
       {/* Subtle Progress Bar */}
-      <div className="w-full max-w-xl bg-paper-dark h-1 rounded-full overflow-hidden mb-6">
+      <div className="w-full max-w-xl bg-paper-dark h-2 rounded-full overflow-hidden mb-6 border border-rule/70">
         <div 
           className="bg-aizome h-full transition-all duration-200 rounded-full"
           style={{ width: `${activeCards.length > 0 ? ((currentIndex + 1) / activeCards.length) * 100 : 0}%` }}
@@ -240,32 +240,41 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
 
       {/* THE MAIN CARD ARENA */}
       {activeCards.length === 0 ? (
-        <div className="w-full max-w-xl h-80 sm:h-96 rounded-2xl bg-paper-pure border border-rule flex flex-col items-center justify-center p-8 text-center shadow-paper">
-          <Check className="w-10 h-10 text-matcha mb-3 stroke-[2]" />
+        <div className="study-panel w-full max-w-xl h-80 sm:h-96 rounded-2xl bg-mint-soft border border-sage flex flex-col items-center justify-center p-8 text-center">
+          <span className="w-14 h-14 rounded-2xl bg-paper-pure flex items-center justify-center mb-4 shadow-paper-sm"><Check className="w-7 h-7 text-matcha stroke-[2]" /></span>
           <h3 className="text-lg font-bold text-ink mb-1">Đã thuộc toàn bộ từ vựng!</h3>
           <p className="text-xs text-ink-pencil mb-5">Không còn từ nào trong danh sách "Chưa thuộc".</p>
           <button
             onClick={() => setOnlyUnknownMode(false)}
-            className="px-4 py-2 text-xs font-semibold rounded-lg bg-aizome text-paper-pure hover:bg-aizome-hover transition-colors cursor-pointer"
+            className="px-4 py-2 text-xs font-semibold rounded-lg bg-aizome text-white hover:bg-aizome-hover transition-colors cursor-pointer"
           >
             Ôn tập lại toàn bộ thẻ
           </button>
         </div>
       ) : (
-        <div 
-          className="w-full max-w-xl h-80 sm:h-96 perspective-800 cursor-pointer select-none"
+        <div
+          key={currentCard?.id}
+          className="flashcard-stage flashcard-swap w-full max-w-xl h-80 sm:h-96 cursor-pointer select-none"
           onClick={handleFlip}
           role="button"
           tabIndex={0}
-          aria-label="Lật thẻ từ vựng"
+          aria-label={isFlipped ? 'Quay lại mặt trước của thẻ' : 'Lật thẻ để xem cách đọc'}
+          aria-pressed={isFlipped}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              event.preventDefault();
+              event.stopPropagation();
+              handleFlip();
+            }
+          }}
         >
-          <div 
-            className={`relative w-full h-full duration-250 ease-out transform-style-3d transition-transform ${
+          <div
+            className={`flashcard-flipper relative w-full h-full transform-style-3d ${
               isFlipped ? 'rotate-y-180' : ''
             }`}
           >
             {/* FRONT FACE (Japanese Editorial Study Card) */}
-            <div className="absolute w-full h-full backface-hidden bg-paper-pure border border-rule hover:border-rule-strong rounded-2xl p-7 sm:p-9 flex flex-col justify-between shadow-paper transition-shadow">
+            <div className="flashcard-face flashcard-front study-panel absolute w-full h-full backface-hidden bg-paper-pure border border-sage rounded-2xl p-7 sm:p-10 flex flex-col justify-between transition-[border-color,box-shadow] duration-300">
               {/* Header inside card */}
               <div className="flex justify-between items-center text-xs">
                 <span className="text-ink-muted font-medium">
@@ -294,7 +303,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
               {/* Main Content: Japanese Typography Centerpiece */}
               <div className="text-center my-auto px-4">
                 {/* Kanji / Main Script */}
-                <div className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-wide text-ink font-jp mb-1.5 leading-tight">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-wide text-ink font-jp mb-2 leading-tight">
                   {cardParts?.kanji}
                 </div>
 
@@ -306,7 +315,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
                 )}
 
                 {/* Subtle Divider Rule */}
-                <div className="w-12 h-px bg-rule mx-auto my-4" />
+                <div className="w-14 h-1 rounded-full bg-mint mx-auto my-5" />
 
                 {/* Vietnamese Meaning */}
                 <div className="text-lg sm:text-xl font-medium text-ink-light">
@@ -322,7 +331,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
             </div>
 
             {/* BACK FACE (Pronunciation according to Note) */}
-            <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-paper-subtle border border-rule-strong rounded-2xl p-7 sm:p-9 flex flex-col justify-between shadow-paper">
+            <div className="flashcard-face flashcard-back study-panel absolute w-full h-full backface-hidden rotate-y-180 rounded-2xl p-7 sm:p-10 flex flex-col justify-between">
               <div className="flex justify-between items-center text-xs text-ink-muted">
                 <span className="font-medium tracking-wide">CÁCH ĐỌC (NOTE IPAD)</span>
                 <span>{currentCard?.lesson}</span>
@@ -335,7 +344,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
                   {currentCard?.pronunciation}
                 </div>
 
-                <div className="pt-4 border-t border-rule inline-block text-xs sm:text-sm text-ink-pencil font-jp">
+                <div className="pt-4 border-t border-[#D8CDB8] inline-block text-xs sm:text-sm text-ink-pencil font-jp">
                   <span>{currentCard?.japanese}</span>
                   <span className="mx-2 text-ink-muted">&bull;</span>
                   <span className="text-ink">{currentCard?.vietnamese}</span>
@@ -352,7 +361,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
       )}
 
       {/* Control Actions (Clean, Calm, High Contrast) */}
-      <div className="flex items-center gap-3 sm:gap-4 mt-7 sm:mt-8">
+      <div className="grid grid-cols-[44px_1fr_1fr_44px] items-center gap-2 sm:gap-4 mt-7 sm:mt-8 w-full max-w-xl">
         {/* Previous */}
         <button
           onClick={handlePrev}
@@ -368,7 +377,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
         <button
           onClick={() => handleMark('unknown')}
           disabled={!currentCard}
-          className="px-5 py-2.5 rounded-xl bg-paper-pure hover:bg-hanko-subtle border border-hanko-border hover:border-hanko text-hanko text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 active:scale-95 shadow-paper-sm cursor-pointer"
+          className="min-h-11 px-2 sm:px-5 py-2.5 rounded-xl bg-paper-pure hover:bg-hanko-subtle border border-hanko-border hover:border-hanko text-hanko text-xs sm:text-sm font-semibold transition-all flex items-center justify-center gap-1.5 sm:gap-2 active:scale-95 shadow-paper-sm cursor-pointer"
           title="Đánh dấu chưa thuộc (Phím 1)"
         >
           <X className="w-4 h-4 stroke-[2.5]" />
@@ -380,7 +389,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
         <button
           onClick={() => handleMark('known')}
           disabled={!currentCard}
-          className="px-5 py-2.5 rounded-xl bg-paper-pure hover:bg-matcha-subtle border border-matcha-border hover:border-matcha text-matcha text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 active:scale-95 shadow-paper-sm cursor-pointer"
+          className="min-h-11 px-2 sm:px-5 py-2.5 rounded-xl bg-matcha-subtle hover:bg-matcha hover:text-white border border-matcha-border hover:border-matcha text-matcha text-xs sm:text-sm font-semibold transition-all flex items-center justify-center gap-1.5 sm:gap-2 active:scale-95 shadow-paper-sm cursor-pointer"
           title="Đánh dấu đã thuộc (Phím 2)"
         >
           <Check className="w-4 h-4 stroke-[2.5]" />

@@ -98,12 +98,12 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
   const currentQ = testQuestions[currentQuestionIndex];
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-10 flex flex-col items-center">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-7 sm:py-12 flex flex-col items-center">
       {/* Top Header */}
       <div className="w-full flex items-center justify-between mb-8">
         <button
           onClick={onBackToHome}
-          className="inline-flex items-center gap-1.5 text-xs font-medium text-ink-pencil hover:text-ink px-3 py-1.5 rounded-lg border border-rule bg-paper-pure hover:border-rule-strong shadow-paper-sm transition-colors cursor-pointer"
+          className="inline-flex min-h-10 items-center gap-1.5 text-xs font-semibold text-ink-pencil hover:text-ink px-3 py-2 rounded-xl border border-rule bg-paper-pure hover:border-aizome shadow-paper-sm transition-all cursor-pointer active:scale-[0.98]"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Trang chủ</span>
@@ -111,7 +111,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
 
         {/* Phase Pill */}
         <div className="flex items-center gap-2">
-          <span className="px-3 py-1 rounded-md text-xs font-medium border border-rule bg-paper-pure text-ink-pencil shadow-paper-sm">
+          <span className="px-3 py-1.5 rounded-lg text-xs font-semibold border border-sage bg-mint-soft text-ink-pencil shadow-paper-sm">
             {step === 'intro' && 'Phòng thi vấn đáp'}
             {step === 'reading' && 'Phần 1: Đọc đoạn văn (2 phút)'}
             {step === 'questions' && `Phần 2: Câu hỏi ${currentQuestionIndex + 1} / ${testQuestions.length}`}
@@ -122,7 +122,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
 
       {/* STEP 1: INTRO */}
       {step === 'intro' && (
-        <div className="w-full bg-paper-pure border border-rule rounded-2xl p-7 sm:p-10 shadow-paper">
+        <div className="exam-step study-panel w-full bg-paper-pure border border-sage rounded-2xl p-6 sm:p-10">
           <div className="mb-8">
             <span className="text-xs font-semibold text-ink-muted uppercase tracking-wider block mb-1">
               Bài thi thử kỹ năng nói
@@ -136,7 +136,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <div className="p-5 rounded-xl bg-paper-subtle border border-rule">
+            <div className="p-5 rounded-xl bg-mint-soft border border-sage">
               <span className="text-xs font-bold text-aizome block mb-1">
                 PHẦN 1
               </span>
@@ -146,7 +146,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
               </p>
             </div>
 
-            <div className="p-5 rounded-xl bg-paper-subtle border border-rule">
+            <div className="p-5 rounded-xl bg-aqua border border-mint">
               <span className="text-xs font-bold text-aizome block mb-1">
                 PHẦN 2
               </span>
@@ -196,7 +196,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
                 setHasStartedReading(false);
                 setIsTimerRunning(false);
               }}
-              className="w-full sm:w-auto px-7 py-3 bg-aizome hover:bg-aizome-hover text-paper-pure font-semibold text-sm rounded-xl shadow-paper transition-colors flex items-center justify-center gap-2 cursor-pointer"
+              className="interactive-lift w-full sm:w-auto px-7 py-3 bg-aizome hover:bg-aizome-hover text-white font-semibold text-sm rounded-xl shadow-paper flex items-center justify-center gap-2 cursor-pointer"
             >
               <Play className="w-4 h-4 fill-current" />
               <span>Bắt đầu bài thi</span>
@@ -207,7 +207,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
 
       {/* STEP 2: PART 1 - READING */}
       {step === 'reading' && activeReading && (
-        <div className="w-full bg-paper-pure border border-rule rounded-2xl p-7 sm:p-12 shadow-paper">
+        <div className="exam-step study-panel w-full bg-paper-pure border border-sage rounded-2xl p-6 sm:p-12">
           {/* Header & Timer */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-rule">
             <div>
@@ -218,7 +218,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
             </div>
 
             {/* Calm Timer Box */}
-            <div className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg border font-mono text-sm sm:text-base font-semibold transition-colors ${
+            <div className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border font-mono text-lg sm:text-xl font-bold tabular-nums transition-colors ${
               timerSeconds <= 20 
                 ? 'bg-hanko-subtle border-hanko-border text-hanko' 
                 : 'bg-paper-subtle border-rule text-ink'
@@ -231,21 +231,21 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
           {/* Reading Passage Body */}
           <div className="my-8 sm:my-10">
             {!hasStartedReading ? (
-              <div className="py-12 px-6 rounded-xl bg-paper-subtle border border-dashed border-rule-strong text-center">
+              <div className="py-12 px-6 rounded-xl bg-aqua/70 border border-mint text-center">
                 <p className="text-ink-light text-sm max-w-md mx-auto mb-5 leading-relaxed">
                   Khi bạn bấm <strong>"Bắt đầu đọc"</strong>, đồng hồ 2 phút sẽ bắt đầu tính giờ.<br />
                   Hãy đọc to, rõ ràng từng câu tiếng Nhật. Không hiển thị Romaji hay dịch nghĩa.
                 </p>
                 <button
                   onClick={handleStartReading}
-                  className="px-6 py-2.5 bg-aizome hover:bg-aizome-hover text-paper-pure font-semibold text-sm rounded-xl shadow-paper transition-colors inline-flex items-center gap-2 cursor-pointer"
+                  className="interactive-lift px-6 py-2.5 bg-aizome hover:bg-aizome-hover text-white font-semibold text-sm rounded-xl shadow-paper inline-flex items-center gap-2 cursor-pointer"
                 >
                   <Play className="w-4 h-4 fill-current" />
                   <span>Bắt đầu đọc (Tính giờ)</span>
                 </button>
               </div>
             ) : (
-              <div className="p-6 sm:p-10 rounded-xl bg-paper-pure border border-rule shadow-paper-sm">
+              <div className="p-6 sm:p-10 rounded-xl bg-aqua/40 border border-mint shadow-paper-sm">
                 <div className="font-serif-jp text-lg sm:text-2xl leading-[2.2] tracking-wide text-ink whitespace-pre-line select-none">
                   {activeReading.text}
                 </div>
@@ -263,7 +263,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
 
             <button
               onClick={handleFinishReadingAndGoToQuestions}
-              className="px-5 py-2.5 bg-aizome hover:bg-aizome-hover text-paper-pure font-semibold text-xs sm:text-sm rounded-xl shadow-paper transition-colors flex items-center gap-2 cursor-pointer ml-auto"
+              className="px-5 py-2.5 bg-aizome hover:bg-aizome-hover text-white font-semibold text-xs sm:text-sm rounded-xl shadow-paper transition-all active:scale-[0.98] flex items-center gap-2 cursor-pointer ml-auto"
             >
               <span>Chuyển sang Phần 2: Vấn đáp</span>
               <ChevronRight className="w-4 h-4" />
@@ -274,7 +274,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
 
       {/* STEP 3: PART 2 - QUESTIONS / PICTURE */}
       {step === 'questions' && currentQ && (
-        <div className="w-full bg-paper-pure border border-rule rounded-2xl p-7 sm:p-10 shadow-paper">
+        <div key={currentQuestionIndex} className="exam-step study-panel w-full bg-paper-pure border border-sage rounded-2xl p-6 sm:p-10">
           {/* Header */}
           <div className="flex items-center justify-between pb-4 border-b border-rule mb-6">
             <div>
@@ -294,7 +294,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
 
           {/* Visual Display for Image Questions */}
           {currentQ.type === 'image' && currentQ.visual && (
-            <div className="mb-6 p-7 rounded-xl bg-paper-subtle border border-rule flex flex-col items-center justify-center min-h-[140px] text-center">
+            <div className="mb-6 p-7 rounded-xl bg-aqua border border-mint flex flex-col items-center justify-center min-h-[140px] text-center">
               <div className="text-3xl sm:text-4xl tracking-widest whitespace-pre-line leading-relaxed text-ink select-none">
                 {currentQ.visual.content}
               </div>
@@ -312,7 +312,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
           </div>
 
           {/* Notice to speak aloud first */}
-          <div className="text-center text-xs text-ink-pencil bg-paper-subtle border border-rule p-2.5 rounded-lg mb-6 max-w-md mx-auto">
+          <div className="text-center text-xs text-ink-pencil bg-mint-soft border border-sage p-3 rounded-xl mb-6 max-w-md mx-auto">
             Học viên tự phát âm câu trả lời thành tiếng trước khi bấm xem đáp án.
           </div>
 
@@ -328,7 +328,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
               </button>
             </div>
           ) : (
-            <div className="mb-6 p-5 rounded-xl bg-matcha-subtle border border-matcha-border">
+            <div className="reveal-answer mb-6 p-5 rounded-xl bg-matcha-subtle border border-matcha-border">
               <div className="text-xs font-bold uppercase tracking-wider text-matcha mb-2">
                 Đáp án mẫu:
               </div>
@@ -353,7 +353,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
           <div className="flex justify-end pt-4 border-t border-rule">
             <button
               onClick={handleNextQuestion}
-              className="px-5 py-2.5 bg-aizome hover:bg-aizome-hover text-paper-pure font-semibold text-xs sm:text-sm rounded-xl shadow-paper transition-colors flex items-center gap-2 cursor-pointer"
+              className="px-5 py-2.5 bg-aizome hover:bg-aizome-hover text-white font-semibold text-xs sm:text-sm rounded-xl shadow-paper transition-colors flex items-center gap-2 cursor-pointer"
             >
               <span>{currentQuestionIndex < testQuestions.length - 1 ? 'Câu tiếp theo' : 'Xem kết quả bài thi'}</span>
               <ChevronRight className="w-4 h-4" />
@@ -364,7 +364,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
 
       {/* STEP 4: COMPLETED */}
       {step === 'completed' && activeReading && (
-        <div className="w-full bg-paper-pure border border-rule rounded-2xl p-7 sm:p-10 shadow-paper text-center">
+        <div className="exam-step study-panel w-full bg-paper-pure border border-sage rounded-2xl p-7 sm:p-10 text-center">
           <div className="w-12 h-12 rounded-full bg-matcha-subtle border border-matcha-border text-matcha flex items-center justify-center mx-auto mb-4">
             <CheckCircle2 className="w-6 h-6 stroke-[2]" />
           </div>
@@ -403,7 +403,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
           <div className="flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={handleRestartTest}
-              className="px-5 py-2.5 bg-aizome hover:bg-aizome-hover text-paper-pure text-xs sm:text-sm font-semibold rounded-xl shadow-paper transition-colors flex items-center gap-2 cursor-pointer"
+              className="px-5 py-2.5 bg-aizome hover:bg-aizome-hover text-white text-xs sm:text-sm font-semibold rounded-xl shadow-paper transition-colors flex items-center gap-2 cursor-pointer"
             >
               <RotateCcw className="w-4 h-4" />
               <span>Làm đề thi khác</span>
