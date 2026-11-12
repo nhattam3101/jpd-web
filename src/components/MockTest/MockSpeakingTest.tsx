@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   ArrowLeft, 
   Timer, 
@@ -8,9 +8,7 @@ import {
   CheckCircle2, 
   RotateCcw
 } from 'lucide-react';
-import { readingTests } from '../../data/readingTests';
-import { speakingQuestions } from '../../data/speakingQuestions';
-import { ReadingTest, SpeakingQuestion } from '../../types';
+import { generateMockTest, type MockTestResult, type TestLength, type TestPreset } from '../../services/mockTestGenerator';
 
 interface MockSpeakingTestProps {
   onBackToHome: () => void;
@@ -20,40 +18,18 @@ type TestStep = 'intro' | 'reading' | 'questions' | 'completed';
 
 export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome }) => {
   const [step, setStep] = useState<TestStep>('intro');
-  const [selectedReadingIndex, setSelectedReadingIndex] = useState<number>(0);
+  const [length, setLength] = useState<TestLength>('quick');
+  const [preset, setPreset] = useState<TestPreset>('mixed');
+  const [test, setTest] = useState<MockTestResult | null>(null);
   
   // Timer state for Reading Part (120 seconds = 2 minutes)
   const [timerSeconds, setTimerSeconds] = useState<number>(120);
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
   const [hasStartedReading, setHasStartedReading] = useState<boolean>(false);
 
-  // Questions for Part 2 (2 image questions + 1 direct question)
-  const [testQuestions, setTestQuestions] = useState<SpeakingQuestion[]>([]);
+  const testQuestions = test?.speaking ?? [];
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
-
-  // Generate random question set: 2 image + 1 direct
-  const generateNewTestSet = useCallback(() => {
-    const imagePool = speakingQuestions.filter(q => q.type === 'image');
-    const directPool = speakingQuestions.filter(q => q.type === 'direct');
-
-    const shuffledImage = [...imagePool].sort(() => 0.5 - Math.random());
-    const shuffledDirect = [...directPool].sort(() => 0.5 - Math.random());
-
-    const selected: SpeakingQuestion[] = [
-      shuffledImage[0],
-      shuffledImage[1] || shuffledImage[0],
-      shuffledDirect[0] || directPool[0]
-    ];
-
-    setTestQuestions(selected);
-    setCurrentQuestionIndex(0);
-    setShowAnswer(false);
-  }, []);
-
-  useEffect(() => {
-    generateNewTestSet();
-  }, [generateNewTestSet]);
 
   // Timer countdown
   useEffect(() => {
@@ -75,9 +51,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
     };
   }, [step, isTimerRunning, timerSeconds]);
 
-  const activeReading: ReadingTest = useMemo(() => {
-    return readingTests[selectedReadingIndex] || readingTests[0];
-  }, [selectedReadingIndex]);
+  const activeReading = test?.reading;
 
   const handleStartReading = () => {
     setHasStartedReading(true);
@@ -109,11 +83,9 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
   };
 
   const handleRestartTest = () => {
-    setSelectedReadingIndex((prev) => (prev + 1) % readingTests.length);
     setTimerSeconds(120);
     setIsTimerRunning(false);
     setHasStartedReading(false);
-    generateNewTestSet();
     setStep('intro');
   };
 
@@ -142,7 +114,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
           <span className="px-3 py-1 rounded-md text-xs font-medium border border-rule bg-paper-pure text-ink-pencil shadow-paper-sm">
             {step === 'intro' && 'Phòng thi vấn đáp'}
             {step === 'reading' && 'Phần 1: Đọc đoạn văn (2 phút)'}
-            {step === 'questions' && `Phần 2: Câu hỏi ${currentQuestionIndex + 1} / 3`}
+            {step === 'questions' && `Phần 2: Câu hỏi ${currentQuestionIndex + 1} / ${testQuestions.length}`}
             {step === 'completed' && 'Hoàn thành bài thi'}
           </span>
         </div>
@@ -170,7 +142,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
               </span>
               <h3 className="text-sm font-bold text-ink mb-1">Đọc đoạn văn tiếng Nhật</h3>
               <p className="text-xs text-ink-pencil leading-relaxed">
-                Đọc một đoạn văn khoảng 100–150 từ (Kanji đã học, ngày tháng, số, giờ). <strong>Thời gian làm bài: 2 phút</strong>.
+                Đọc một đoạn văn khoảng 100–150 ký tự (Kanji đã học, ngày tháng, số, giờ). <strong>Thời gian làm bài: 2 phút</strong>.
               </p>
             </div>
 
@@ -180,44 +152,45 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
               </span>
               <h3 className="text-sm font-bold text-ink mb-1">Xem tranh &amp; Trả lời câu hỏi</h3>
               <p className="text-xs text-ink-pencil leading-relaxed">
-                Giáo viên hỏi 3 câu ngẫu nhiên: <strong>2 câu có tranh minh họa</strong> (gọi món, hỏi giá, vị trí) và <strong>1 câu hỏi trực tiếp</strong>.
+                Trả lời 3, 5 hoặc 8 câu hỏi trực tiếp và theo tranh, tùy thời lượng bạn chọn.
               </p>
             </div>
           </div>
 
-          {/* Select Reading Passage */}
-          <div className="mb-8">
-            <label className="block text-xs font-medium text-ink-pencil mb-2">
-              Chọn đề đọc cho Phần 1:
+          <div className="grid gap-4 sm:grid-cols-2 mb-8">
+            <label className="text-sm font-medium text-ink-pencil">Thời lượng
+              <select value={length} onChange={event => setLength(event.target.value as TestLength)} className="mt-2 w-full min-h-11 rounded-xl border border-rule bg-paper-pure px-3 text-ink">
+                <option value="quick">Quick · 3 câu</option>
+                <option value="standard">Standard · 5 câu</option>
+                <option value="full">Full · 8 câu</option>
+              </select>
             </label>
-            <div className="space-y-2">
-              {readingTests.map((test, idx) => (
-                <div
-                  key={test.id}
-                  onClick={() => setSelectedReadingIndex(idx)}
-                  className={`p-3.5 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
-                    selectedReadingIndex === idx
-                      ? 'bg-paper-pure border-aizome shadow-paper'
-                      : 'bg-paper-subtle border-rule hover:border-rule-strong'
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className={`w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold ${
-                      selectedReadingIndex === idx ? 'bg-aizome text-paper-pure' : 'bg-paper-pure border border-rule text-ink-pencil'
-                    }`}>
-                      {idx + 1}
-                    </span>
-                    <span className="text-sm font-medium text-ink">{test.title}</span>
-                  </div>
-                  <span className="text-xs text-ink-muted">~{test.wordCount} từ</span>
-                </div>
-              ))}
-            </div>
+            <label className="text-sm font-medium text-ink-pencil">Phạm vi
+              <select value={preset} onChange={event => setPreset(event.target.value as TestPreset)} className="mt-2 w-full min-h-11 rounded-xl border border-rule bg-paper-pure px-3 text-ink">
+                <option value="mixed">Mixed Test</option>
+                <option value="lesson1">Lesson 1 Test</option>
+                <option value="lesson2">Lesson 2 Test</option>
+                <option value="lesson3">Lesson 3 Test</option>
+                <option value="priority">Exam Priority</option>
+              </select>
+            </label>
           </div>
+          <p className="text-xs text-ink-pencil mb-6">Đề đọc và câu hỏi được chọn ngẫu nhiên. Full trong Mixed Test và Exam Priority trải đều các chủ đề chính.</p>
 
           <div className="flex justify-end pt-4 border-t border-rule">
             <button
               onClick={() => {
+                let previous: { questionIds?: string[]; readingId?: string } = {};
+                try {
+                  previous = JSON.parse(localStorage.getItem('learning_jpd_last_mock') || '{}');
+                } catch { /* Storage can be unavailable or contain invalid data. */ }
+                const next = generateMockTest({ length, preset, previousQuestionIds: previous.questionIds, previousReadingId: previous.readingId });
+                setTest(next);
+                try {
+                  localStorage.setItem('learning_jpd_last_mock', JSON.stringify({ questionIds: next.speaking.map(q => q.id), readingId: next.reading.id }));
+                } catch { /* The test still works without persistent history. */ }
+                setCurrentQuestionIndex(0);
+                setShowAnswer(false);
                 setStep('reading');
                 setTimerSeconds(120);
                 setHasStartedReading(false);
@@ -233,7 +206,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
       )}
 
       {/* STEP 2: PART 1 - READING */}
-      {step === 'reading' && (
+      {step === 'reading' && activeReading && (
         <div className="w-full bg-paper-pure border border-rule rounded-2xl p-7 sm:p-12 shadow-paper">
           {/* Header & Timer */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-rule">
@@ -320,10 +293,10 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
           </div>
 
           {/* Visual Display for Image Questions */}
-          {currentQ.type === 'image' && currentQ.image && (
+          {currentQ.type === 'image' && currentQ.visual && (
             <div className="mb-6 p-7 rounded-xl bg-paper-subtle border border-rule flex flex-col items-center justify-center min-h-[140px] text-center">
               <div className="text-3xl sm:text-4xl tracking-widest whitespace-pre-line leading-relaxed text-ink select-none">
-                {currentQ.image}
+                {currentQ.visual.content}
               </div>
             </div>
           )}
@@ -390,7 +363,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
       )}
 
       {/* STEP 4: COMPLETED */}
-      {step === 'completed' && (
+      {step === 'completed' && activeReading && (
         <div className="w-full bg-paper-pure border border-rule rounded-2xl p-7 sm:p-10 shadow-paper text-center">
           <div className="w-12 h-12 rounded-full bg-matcha-subtle border border-matcha-border text-matcha flex items-center justify-center mx-auto mb-4">
             <CheckCircle2 className="w-6 h-6 stroke-[2]" />
@@ -400,7 +373,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
             Hoàn thành bài thi thử!
           </h2>
           <p className="text-ink-pencil text-xs sm:text-sm max-w-md mx-auto mb-8">
-            Bạn đã hoàn thành bài đọc đoạn văn tiếng Nhật và trả lời 3 câu hỏi vấn đáp.
+            Bạn đã hoàn thành bài đọc đoạn văn tiếng Nhật và trả lời {testQuestions.length} câu hỏi vấn đáp.
           </p>
 
           {/* Summary Box */}
@@ -411,7 +384,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
             </div>
 
             <div className="pt-3 border-t border-rule">
-              <span className="text-xs text-ink-muted font-medium block mb-2">Phần 2 &bull; 3 câu hỏi đã trả lời:</span>
+              <span className="text-xs text-ink-muted font-medium block mb-2">Phần 2 &bull; {testQuestions.length} câu hỏi đã trả lời:</span>
               <ul className="space-y-2 text-xs text-ink-light">
                 {testQuestions.map((q, idx) => (
                   <li key={idx} className="flex items-start gap-2">

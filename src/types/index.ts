@@ -40,6 +40,9 @@ export type SpeakingQuestion = {
   type: "image" | "direct";
 
   question: string;
+  difficulty: "easy" | "medium" | "hard";
+  group: "personal" | "objects" | "commerce" | "schedule";
+  examPriority: boolean;
 
   visual?: {
     kind: "emoji" | "text";

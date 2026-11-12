@@ -6,10 +6,9 @@ import { speakingQuestions } from '../data/speakingQuestions';
 import { loadProgress } from '../utils/storage';
 
 interface HomeProps {
-  onSelectMode: (mode: 'flashcard' | 'mock-test', initialDeckId?: string) => void;
+  onSelectMode: (mode: 'flashcard' | 'mock-test' | 'recognition', initialDeckId?: string) => void;
 }
 
-const nihonStepLogo = new URL('../../NihonStep Flashcard Logo.png', import.meta.url).href;
 
 export const Home: React.FC<HomeProps> = ({ onSelectMode }) => {
   const progress = loadProgress();
@@ -30,12 +29,9 @@ export const Home: React.FC<HomeProps> = ({ onSelectMode }) => {
           <span className="w-1.5 h-1.5 rounded-full bg-aizome"></span>
           <span>Môn Tiếng Nhật 1 &bull; FPT University</span>
         </div>
-        <h1 className="mx-auto mb-3 h-24 w-72 sm:h-28 sm:w-80 overflow-hidden">
-          <img
-            src={nihonStepLogo}
-            alt="NihonStep"
-            className="h-full w-full object-cover object-center"
-          />
+        <h1 className="mx-auto mb-3 flex items-center justify-center gap-3 h-24 sm:h-28">
+          <img src="/nihonstep-icon.png" alt="" className="h-20 w-20 sm:h-24 sm:w-24 object-contain" />
+          <span className="text-4xl font-bold tracking-tight">NihonStep</span>
         </h1>
         <p className="text-ink-pencil text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
           Không gian ôn tập tối giản: thẻ học theo note iPad Bài 1.1 → 3.3 và bài thi nói mô phỏng phòng thi.
@@ -111,7 +107,7 @@ export const Home: React.FC<HomeProps> = ({ onSelectMode }) => {
               Thi thử
             </h2>
             <p className="text-ink-pencil text-xs sm:text-sm leading-relaxed mb-6">
-              Mô phỏng bài thi nói thật: đọc đoạn văn tiếng Nhật 100–150 từ (có timer 2 phút) và trả lời 3 câu hỏi tranh / trực tiếp.
+              Mô phỏng bài thi nói thật: đọc đoạn văn tiếng Nhật khoảng 100–150 ký tự (có timer 2 phút) và trả lời 3, 5 hoặc 8 câu hỏi.
             </p>
           </div>
 
@@ -125,6 +121,11 @@ export const Home: React.FC<HomeProps> = ({ onSelectMode }) => {
           </div>
         </button>
       </div>
+
+      <button onClick={() => onSelectMode('recognition')} className="w-full text-left mb-10 p-6 rounded-2xl border border-rule bg-paper-pure hover:border-aizome shadow-paper">
+        <span className="block text-lg font-bold text-ink">Nhận diện câu hỏi →</span>
+        <span className="block mt-2 text-sm text-ink-pencil">Luyện từ hỏi, ý nghĩa và cấu trúc trả lời; ôn lại các dạng câu theo từng nhóm.</span>
+      </button>
 
       {/* Subtle Lesson Quick-Switch */}
       <div className="w-full pt-8 border-t border-rule">

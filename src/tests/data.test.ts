@@ -15,6 +15,7 @@ import {
 import { readingTests } from '../data/readingTests';
 import { speakingQuestions } from '../data/speakingQuestions';
 import { generateMockTest } from '../services/mockTestGenerator';
+import { questionPatterns } from '../data/questionPatterns';
 
 const VALID_LESSONS = new Set([
   '1.1', '1.2', '1.3',
@@ -82,104 +83,85 @@ describe('Vocabulary Data Validation', () => {
   });
 });
 
-describe('Reading Tests Validation', () => {
-  it('reading tests list is not empty and has at least 10 tests', () => {
-    expect(readingTests.length).toBeGreaterThanOrEqual(10);
-  });
-
-  it('each reading test has valid non-empty fields', () => {
-    const ids = new Set<string>();
-    for (const test of readingTests) {
-      expect(test.id).toBeDefined();
-      expect(ids.has(test.id)).toBe(false);
-      ids.add(test.id);
-
-      expect(test.title.trim().length).toBeGreaterThan(0);
-      expect(test.text.trim().length).toBeGreaterThan(0);
-      expect(test.lessons.length).toBeGreaterThan(0);
-
-      // Verify no Romaji or Vietnamese words in reading text
-      expect(test.text).not.toMatch(/[a-zA-Z]/);
-      expect(test.text).not.toMatch(/[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ]/i);
-
-      // Character count roughly 100 - 150 Japanese characters
-      const cleanChars = test.text.replace(/[\s\n\r。、「」]/g, '');
-      expect(cleanChars.length).toBeGreaterThanOrEqual(90);
-      expect(cleanChars.length).toBeLessThanOrEqual(170);
+describe('Mock test data', () => {
+  it('contains the requested reading distribution and Japanese-only passages', () => {
+    expect(['1', '2', '3'].map(lesson => readingTests.filter(r => r.lessons.includes(lesson)).length)).toEqual([8, 10, 12]);
+    expect(new Set(readingTests.map(r => r.id)).size).toBe(readingTests.length);
+    expect(new Set(readingTests.map(r => r.text)).size).toBe(readingTests.length);
+    for (const reading of readingTests) {
+      expect(reading.text).not.toMatch(/[a-zA-ZÀ-ỹ]/);
+      expect(reading.text.replace(/[\s。、]/g, '').length).toBeGreaterThanOrEqual(90);
+      expect(reading.text.replace(/[\s。、]/g, '').length).toBeLessThanOrEqual(170);
     }
   });
-});
 
-describe('Speaking Question Bank Validation', () => {
-  it('speaking questions list has at least 40 questions', () => {
-    expect(speakingQuestions.length).toBeGreaterThanOrEqual(40);
-  });
+  it('contains forty distinct questions per lesson with complete answers and visuals', () => {
+    expect(['1', '2', '3'].every(lesson => speakingQuestions.filter(q => q.lesson === lesson).length >= 40)).toBe(true);
+    expect(new Set(speakingQuestions.map(q => q.id)).size).toBe(speakingQuestions.length);
 
-  it('all speaking questions have non-empty expectedAnswers and vietnameseMeaning', () => {
-    const ids = new Set<string>();
+    const learnedKanji = new Set(Array.from('一七三九二五何先八六円分十四土大学日時曜月木本校水火生誕語金私')); 
     for (const q of speakingQuestions) {
-      expect(q.id).toBeDefined();
-      expect(ids.has(q.id)).toBe(false);
-      ids.add(q.id);
-
-      expect(q.question.trim().length).toBeGreaterThan(0);
-      expect(Array.isArray(q.expectedAnswers)).toBe(true);
+      for (const character of (q.question + q.expectedAnswers.join('')).match(/[一-龯]/g) ?? []) {
+        expect(learnedKanji.has(character)).toBe(true);
+      }
       expect(q.expectedAnswers.length).toBeGreaterThan(0);
-      for (const ans of q.expectedAnswers) {
-        expect(ans.trim().length).toBeGreaterThan(0);
-      }
-      expect(q.vietnameseMeaning.trim().length).toBeGreaterThan(0);
-    }
-  });
-
-  it('contains both image and direct question types', () => {
-    const imageQuestions = speakingQuestions.filter(q => q.type === 'image');
-    const directQuestions = speakingQuestions.filter(q => q.type === 'direct');
-
-    expect(imageQuestions.length).toBeGreaterThanOrEqual(15);
-    expect(directQuestions.length).toBeGreaterThanOrEqual(15);
-
-    for (const imgQ of imageQuestions) {
-      expect(imgQ.visual).toBeDefined();
-      expect(imgQ.visual?.content.trim().length).toBeGreaterThan(0);
+      expect(q.expectedAnswers.every(answer => answer.trim())).toBe(true);
+      expect(q.vietnameseMeaning.trim()).not.toBe('');
+      expect(['easy', 'medium', 'hard']).toContain(q.difficulty);
+      if (q.type === 'image') expect(q.visual?.content.trim()).toBeTruthy();
     }
   });
 });
 
-describe('Mock Test Generator Service', () => {
-  it('generates a mock test with exactly 1 reading passage and 3 speaking questions', () => {
-    for (let i = 0; i < 20; i++) {
-      const mock = generateMockTest();
-      expect(mock.reading).toBeDefined();
-      expect(mock.reading.text.trim().length).toBeGreaterThan(0);
-
-      expect(Array.isArray(mock.speaking)).toBe(true);
-      expect(mock.speaking.length).toBe(3);
-    }
-  });
-
-  it('no duplicate speaking questions within a single generated mock test', () => {
-    for (let i = 0; i < 30; i++) {
-      const mock = generateMockTest();
-      const questionIds = mock.speaking.map(q => q.id);
-      const uniqueIds = new Set(questionIds);
-      expect(uniqueIds.size).toBe(3);
-    }
-  });
-
-  it('prioritizes 2 image questions and 1 direct question', () => {
-    let balancedCount = 0;
-    const iterations = 50;
-    for (let i = 0; i < iterations; i++) {
-      const mock = generateMockTest();
-      const imageCount = mock.speaking.filter(q => q.type === 'image').length;
-      const directCount = mock.speaking.filter(q => q.type === 'direct').length;
-      if (imageCount === 2 && directCount === 1) {
-        balancedCount++;
+describe('Mock test generator', () => {
+  it('generates each length and scope with no duplicates and avoids the previous test', () => {
+    for (const preset of ['lesson1', 'lesson2', 'lesson3', 'mixed', 'priority'] as const) {
+      for (const [length, count] of [['quick', 3], ['standard', 5], ['full', 8]] as const) {
+        for (let i = 0; i < 20; i++) {
+          const first = generateMockTest({ preset, length });
+          const next = generateMockTest({ preset, length, previousQuestionIds: first.speaking.map(q => q.id), previousReadingId: first.reading.id });
+          expect(next.speaking).toHaveLength(count);
+          expect(new Set(next.speaking.map(q => q.id)).size).toBe(count);
+          expect(next.speaking.some(q => first.speaking.some(old => old.id === q.id))).toBe(false);
+          expect(next.reading.id).not.toBe(first.reading.id);
+          if (preset.startsWith('lesson')) {
+            expect(next.reading.lessons).toContain(preset.slice(-1));
+            expect(next.speaking.every(q => q.lesson === preset.slice(-1))).toBe(true);
+          } else {
+            expect(new Set(next.speaking.map(q => q.lesson)).size).toBe(3);
+            if (length === 'full') expect(new Set(next.speaking.map(q => q.group))).toEqual(new Set(['personal', 'objects', 'commerce', 'schedule']));
+          }
+        }
       }
     }
-    // Since our pool has 26 image and 26 direct questions, it should consistently produce 2 image + 1 direct
-    expect(balancedCount).toBe(iterations);
+  });
+  it('prioritizes exam questions', () => {
+    const test = generateMockTest({ preset: 'priority', length: 'full' });
+    expect(test.speaking.every(q => q.examPriority)).toBe(true);
   });
 });
 
+describe('Question patterns', () => {
+  it('has unique IDs, explanations, examples and valid vocabulary references', () => {
+    expect(new Set(questionPatterns.map(p => p.id)).size).toBe(questionPatterns.length);
+    const ids = new Set(allLessonCards.map(c => c.id));
+    for (const pattern of questionPatterns) {
+      expect(pattern.questionWord && pattern.meaning && pattern.answerPattern).toBeTruthy();
+      expect(pattern.examples.length).toBeGreaterThanOrEqual(5);
+      for (const example of pattern.examples) {
+        expect(example.question && example.answer).toBeTruthy();
+        expect(example.vocabularyIds.every(id => ids.has(id))).toBe(true);
+      }
+    }
+  });
+  it('uses the centralized examples for every mock question', () => {
+    const allExamples = new Set(questionPatterns.flatMap(p => p.examples.map(e => `${e.question}|${e.answer}`)));
+    for (const q of speakingQuestions) expect(allExamples.has(`${q.question}|${q.expectedAnswers[0]}`)).toBe(true);
+  });
+  it('keeps choice and location particles distinct', () => {
+    expect(questionPatterns.find(p => p.id === 'choice')?.answerPattern).toContain('これ');
+    expect(questionPatterns.find(p => p.id === 'choice-noun')?.answerPattern).toContain('この');
+    expect(questionPatterns.find(p => p.id === 'go')?.answerPattern).toContain('へ');
+    expect(questionPatterns.find(p => p.id === 'activity')?.answerPattern).toContain('で');
+  });
+});

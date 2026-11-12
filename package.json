@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "coverage:questions": "esbuild scripts/checkQuestionCoverage.ts --bundle --platform=node --format=cjs --outfile=node_modules/.cache/question-coverage.cjs && node node_modules/.cache/question-coverage.cjs"
   },
   "dependencies": {
     "lucide-react": "^1.16.0",
