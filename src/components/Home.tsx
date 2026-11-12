@@ -22,7 +22,15 @@ export const Home: React.FC<HomeProps> = ({ onSelectMode }) => {
   const lastTestDate = localStorage.getItem('learning_jpd_last_test_date');
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 flex flex-col items-center">
+    <div className="home-scene">
+      <div className="home-japanese-background" aria-hidden="true">
+        {['あ', '日', '本', '語', '学', '時', '月', '読', '話'].map((character, index) => (
+          <span key={character} className={`home-japanese-character home-japanese-character-${index + 1}`}>
+            {character}
+          </span>
+        ))}
+      </div>
+    <div className="relative max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20 flex flex-col items-center">
       {/* Editorial Title / Header */}
       <div className="w-full text-center mb-12 sm:mb-16">
         <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded border border-rule bg-paper-subtle text-ink-pencil text-xs font-medium tracking-wide mb-4">
@@ -152,6 +160,7 @@ export const Home: React.FC<HomeProps> = ({ onSelectMode }) => {
           })}
         </div>
       </div>
+    </div>
     </div>
   );
 };
