@@ -231,7 +231,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
       </div>
 
       {/* Subtle Progress Bar */}
-      <div className="w-full max-w-xl bg-paper-dark h-2 rounded-full overflow-hidden mb-6 border border-rule/70">
+      <div className="w-full max-w-xl bg-paper-dark h-1 rounded-full overflow-hidden mb-6">
         <div 
           className="bg-aizome h-full transition-all duration-200 rounded-full"
           style={{ width: `${activeCards.length > 0 ? ((currentIndex + 1) / activeCards.length) * 100 : 0}%` }}
@@ -240,8 +240,8 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
 
       {/* THE MAIN CARD ARENA */}
       {activeCards.length === 0 ? (
-        <div className="study-panel w-full max-w-xl h-80 sm:h-96 rounded-2xl bg-mint-soft border border-sage flex flex-col items-center justify-center p-8 text-center">
-          <span className="w-14 h-14 rounded-2xl bg-paper-pure flex items-center justify-center mb-4 shadow-paper-sm"><Check className="w-7 h-7 text-matcha stroke-[2]" /></span>
+        <div className="study-panel w-full max-w-xl h-80 sm:h-96 rounded-2xl bg-paper-pure border border-rule flex flex-col items-center justify-center p-8 text-center">
+          <Check className="w-10 h-10 text-matcha mb-3 stroke-[2]" />
           <h3 className="text-lg font-bold text-ink mb-1">Đã thuộc toàn bộ từ vựng!</h3>
           <p className="text-xs text-ink-pencil mb-5">Không còn từ nào trong danh sách "Chưa thuộc".</p>
           <button
@@ -274,7 +274,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
             }`}
           >
             {/* FRONT FACE (Japanese Editorial Study Card) */}
-            <div className="flashcard-face flashcard-front study-panel absolute w-full h-full backface-hidden bg-paper-pure border border-sage rounded-2xl p-7 sm:p-10 flex flex-col justify-between transition-[border-color,box-shadow] duration-300">
+            <div className="flashcard-face flashcard-front study-panel absolute w-full h-full backface-hidden bg-paper-pure border border-rule hover:border-rule-strong rounded-2xl p-7 sm:p-9 flex flex-col justify-between transition-[border-color,box-shadow] duration-300">
               {/* Header inside card */}
               <div className="flex justify-between items-center text-xs">
                 <span className="text-ink-muted font-medium">
@@ -303,16 +303,24 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
               {/* Main Content: Japanese Typography Centerpiece */}
               <div className="text-center my-auto px-4">
                 {/* Kanji / Main Script */}
-                <div className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-wide text-ink font-jp mb-2 leading-tight">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-wide text-ink font-jp mb-1.5 leading-tight">
                   {cardParts?.kanji}
                 </div>
 
-                {/* Japanese reading stays on the prompt side. */}
+                {/* Furigana / Reading */}
                 {cardParts?.kana && (
-                  <div className="text-base sm:text-lg font-medium text-ink-pencil font-jp mt-3">
+                  <div className="text-base sm:text-lg font-medium text-ink-pencil font-jp mb-6">
                     {cardParts.kana}
                   </div>
                 )}
+
+                {/* Subtle Divider Rule */}
+                <div className="w-12 h-px bg-rule mx-auto my-4" />
+
+                {/* Vietnamese Meaning */}
+                <div className="text-lg sm:text-xl font-medium text-ink-light">
+                  {currentCard?.vietnamese}
+                </div>
               </div>
 
               {/* Footer Hint */}
@@ -323,7 +331,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
             </div>
 
             {/* BACK FACE (Pronunciation according to Note) */}
-            <div className="flashcard-face flashcard-back study-panel absolute w-full h-full backface-hidden rounded-2xl p-7 sm:p-10 flex flex-col justify-between">
+            <div className="flashcard-face flashcard-back study-panel absolute w-full h-full backface-hidden rounded-2xl p-7 sm:p-9 flex flex-col justify-between">
               <div className="flex justify-between items-center text-xs text-ink-muted">
                 <span className="font-medium tracking-wide">CÁCH ĐỌC (NOTE IPAD)</span>
                 <span>{currentCard?.lesson}</span>
@@ -335,7 +343,7 @@ export const FlashcardPlayer: React.FC<FlashcardPlayerProps> = ({
                   {currentCard?.pronunciation}
                 </div>
 
-                <div className="w-14 h-1 rounded-full bg-[#D8CDB8] mx-auto my-5" />
+                <div className="w-14 h-1 rounded-full bg-rule-strong mx-auto my-5" />
 
                 <div>
                   <span className="text-xs font-semibold text-ink-muted block mb-1.5">NGHĨA TIẾNG VIỆT</span>

@@ -4,17 +4,17 @@
 
 @layer base {
   :root {
-    --color-forest: #5D7B6F;
-    --color-sage: #A4C3A2;
-    --color-mint: #B0D4B8;
-    --color-sand: #EAE7D6;
-    --color-aqua: #D7F9FA;
-    --bg-paper: #EAE7D6;
-    --surface-card: #F9FAF4;
-    --surface-soft: #E2E8D9;
-    --border-rule: #C8D2C1;
-    --text-primary: #23342E;
-    --text-secondary: #465D54;
+    --color-forest: #1E2B37;
+    --color-sage: #D4D1C8;
+    --color-mint: #C0DFC9;
+    --color-sand: #FBFBFA;
+    --color-aqua: #EDF1F5;
+    --bg-paper: #FBFBFA;
+    --surface-card: #FFFFFF;
+    --surface-soft: #F4F3EE;
+    --border-rule: #E7E5E0;
+    --text-primary: #191817;
+    --text-secondary: #45433E;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -33,13 +33,13 @@
 
   /* Accessible focus rings */
   :focus-visible {
-    outline: 3px solid #5D7B6F;
-    outline-offset: 3px;
+    outline: 2px solid #1E2B37;
+    outline-offset: 2px;
   }
 
   ::selection {
-    background: #B0D4B8;
-    color: #23342E;
+    background: #DCE5EC;
+    color: #191817;
   }
 
   button, select {
@@ -68,10 +68,7 @@
 }
 
 .app-surface {
-  background:
-    radial-gradient(circle at 8% 8%, rgba(215, 249, 250, 0.72), transparent 30rem),
-    radial-gradient(circle at 92% 28%, rgba(176, 212, 184, 0.42), transparent 28rem),
-    var(--bg-paper);
+  background: var(--bg-paper);
 }
 
 .app-view {
@@ -92,7 +89,7 @@
 }
 
 .study-panel {
-  box-shadow: 0 18px 48px -30px rgba(45, 70, 59, 0.5);
+  box-shadow: 0 1px 3px rgba(25, 24, 23, 0.04), 0 8px 24px -4px rgba(25, 24, 23, 0.04);
 }
 
 .reveal-answer {
@@ -128,26 +125,10 @@
   transform: rotateY(180deg) translateZ(1px);
 }
 
-.flashcard-face::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: inherit;
-  background: linear-gradient(130deg, rgba(255, 255, 255, 0.34), transparent 38%);
-  opacity: 0.7;
-  z-index: 0;
-}
-
-.flashcard-face > * {
-  position: relative;
-  z-index: 1;
-}
-
 .flashcard-back {
-  background: #F3EBDD;
-  border: 1px solid #D8CDB8;
-  box-shadow: 0 18px 48px -30px rgba(85, 70, 45, 0.46);
+  background: #F4F3EE;
+  border: 1px solid #D4D1C8;
+  box-shadow: 0 1px 3px rgba(25, 24, 23, 0.04), 0 8px 24px -4px rgba(25, 24, 23, 0.04);
 }
 
 .exam-step {
@@ -225,14 +206,14 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #E2E8D9;
+  background: #F4F3EE;
 }
 ::-webkit-scrollbar-thumb {
-  background: #A4C3A2;
+  background: #D4D1C8;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #5D7B6F;
+  background: #B8B5AE;
 }
 
 /* Reduced motion preference */
