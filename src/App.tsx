@@ -3,9 +3,10 @@ import { BookOpen, Mic, Home as HomeIcon } from 'lucide-react';
 import { Home } from './components/Home';
 import { FlashcardPlayer } from './components/Flashcard/FlashcardPlayer';
 import { MockSpeakingTest } from './components/MockTest/MockSpeakingTest';
+import { KanjiStudy } from './components/Kanji/KanjiStudy';
 import { QuestionRecognition } from './components/QuestionRecognition/QuestionRecognition';
 
-type ViewMode = 'home' | 'flashcard' | 'mock-test' | 'recognition';
+type ViewMode = 'home' | 'flashcard' | 'mock-test' | 'recognition' | 'kanji';
 
 export function App() {
   const [currentView, setCurrentView] = useState<ViewMode>('home');
@@ -63,6 +64,8 @@ export function App() {
               <span className="sm:hidden">Từ vựng</span>
             </button>
 
+            <button onClick={() => setCurrentView('kanji')} className={`min-h-9 px-2.5 sm:px-3 py-1 text-xs font-medium rounded-lg ${currentView === 'kanji' ? 'bg-paper-pure text-ink shadow-paper-sm' : 'text-ink-pencil'}`}>Học Kanji</button>
+
             <button
               onClick={() => setCurrentView('mock-test')}
               className={`min-h-9 px-2.5 sm:px-3 py-1 text-xs font-medium rounded-lg flex items-center gap-1.5 transition-all cursor-pointer ${
@@ -91,6 +94,8 @@ export function App() {
               onBackToHome={() => setCurrentView('home')}
             />
           )}
+
+          {currentView === 'kanji' && <KanjiStudy />}
 
           {currentView === 'recognition' && <QuestionRecognition onBackToHome={() => setCurrentView('home')} />}
 
