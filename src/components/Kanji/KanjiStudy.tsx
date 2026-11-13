@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { allKanji, kanjiDecks } from '../../data/kanji';
 import type { KanjiCard } from '../../data/kanji';
 
@@ -18,6 +18,18 @@ export function KanjiStudy() {
  const prompt=(c:KanjiCard) => activeMode==='reverse' ? c.readings.join(' / ') : activeMode==='number' ? String(c.value) : c.kanji;
  const answer=(c:KanjiCard) => activeMode==='reverse'||activeMode==='number' ? c.kanji : activeMode==='meaning' ? c.meaning : activeMode==='numeric' ? String(c.value) : c.readings.join(' / ');
  const move=(delta:number)=>{setIndex(i=>Math.max(0,Math.min(cards.length-1,i+delta)));setRevealed(false);};
+ useEffect(()=>{
+  const onKeyDown=(event:KeyboardEvent)=>{
+   if(event.altKey || event.ctrlKey || event.metaKey || event.repeat || event.target instanceof HTMLInputElement || event.target instanceof HTMLSelectElement || event.target instanceof HTMLTextAreaElement || (event.target instanceof HTMLElement && event.target.isContentEditable)) return;
+   if(event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+   if(!cards.length) return;
+   event.preventDefault();
+   setIndex(i=>Math.max(0,Math.min(cards.length-1,i+(event.key==='ArrowRight'?1:-1))));
+   setRevealed(false);
+  };
+  window.addEventListener('keydown',onKeyDown);
+  return ()=>window.removeEventListener('keydown',onKeyDown);
+ },[cards.length]);
  const mark=(status:'known'|'unknown')=>{if(!current)return; const next={...progress,[current.id]:status}; setProgress(next); try {localStorage.setItem(key,JSON.stringify(next));} catch { /* storage may be unavailable */ } if(unknown && status==='known') setIndex(i=>Math.max(0,Math.min(i,eligible.length-2))); else move(1); setRevealed(false);};
  const startQuiz=()=>{setQuiz(shuffle(allKanji.filter(c=>c.kanji.length>1)).slice(0,10));setQuizModes(Array.from({length:10},()=>shuffle<Mode>(['reading','reverse','meaning'])[0]));setIndex(0);setRevealed(false);};
  const choose=(id:string)=>{setDeckId(id);setMode('reading');setOrder(null);setIndex(0);setRevealed(false);setQuiz(null);};
@@ -29,7 +41,7 @@ export function KanjiStudy() {
   <span aria-hidden={revealed} className="flashcard-face flashcard-front study-panel absolute inset-0 backface-hidden bg-paper-pure border border-rule rounded-2xl p-6 sm:p-9 flex flex-col justify-between">
    <span className="text-xs text-ink-pencil text-left">{quiz ? modes.find(([v])=>v===activeMode)?.[1] : modes.find(([v])=>v===mode)?.[1]}</span>
    <span lang="ja" className="block my-auto text-5xl sm:text-6xl font-medium font-jp break-words">{prompt(current)}</span>
-   <span className="text-xs text-ink-pencil">Bấm thẻ hoặc phím Space để xem đáp án</span>
+   <span className="text-xs text-ink-pencil">Bấm thẻ hoặc Space để lật · ← → để chuyển thẻ</span>
   </span>
   <span aria-hidden={!revealed} className="flashcard-face flashcard-back study-panel absolute inset-0 backface-hidden rounded-2xl p-6 sm:p-9 flex flex-col justify-between">
    <span className="text-xs text-ink-pencil text-left">Đáp án</span>
