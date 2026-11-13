@@ -111,4 +111,22 @@ places.forEach(v=>add('go','どこへ いきますか。',`${v}へ いきます�
 ['ベトナム','日本','アメリカ','イタリア','かんこく'].forEach(v => add('direction','おくには どちらですか。',`${v}です。`,v));
 [['としょかん','本','よみます'],['こうえん','サッカー','します'],['うち','テレビ','みます'],['大学','日本語','べんきょうします'],['スーパー','りんご','かいます']].forEach(([place,thing,verb]) => add('activity','どこで 何を しますか。',`${place}で ${thing}を ${verb}。`,`${place}：${thing}`));
 ['六時','七時','八時','九時','十時'].forEach(v => add('routine','まいあさ 何時に おきますか。',`${v}に おきます。`,v));
+// Exam visuals are also recognition examples, keeping both modes on one source.
+['カリナ','アンナ','ナム','リン','マリア','ジョン','キム','アン'].forEach((name, i) => {
+  const age = [31,20,19,22,25,28,30,24][i];
+  add('age', `${name}さんは何さいですか。`, `${age}さいです。`, `👤 ${name}  ${age}さい`);
+});
+const locationSigns: [string, string, string][] = [
+  ['としょかん','LIBRARY','📚'],['ぎんこう','BANK','🏦'],['びょういん','HOSPITAL','🏥'],
+  ['ゆうびんきょく','POST OFFICE','📮'],['コンビニ','CONVENIENCE STORE','🏪'],
+  ['レストラン','RESTAURANT','🍽️'],['きっさてん','CAFE','☕'],['スーパー','SUPERMARKET','🛒'],['こうえん','PARK','🌳']
+];
+locationSigns.forEach(([place, sign, icon]) => add('location', 'ここはどこですか。', `${place}です。`, `${icon}\n${sign}`));
+const orderFoods = ['カレー','スープ','とんかつ','ハンバーグ','ごはん','パン','ケーキ','おすし'];
+const orderDrinks = ['ジュース','コーヒー','おちゃ','こうちゃ','ぎゅうにゅう','みず'];
+orderFoods.forEach((food, i) => orderDrinks.forEach((drink, j) => {
+  const a = (i + j) % 3, b = (i * 2 + j + 1) % 3;
+  add('order', 'ごちゅうもんは？', `${food}を${quantities[a]}と${drink}を${quantities[b]}ください。`, `🍽️ ${food} × ${a + 1}\n🥤 ${drink} × ${b + 1}`);
+}));
+[['なつやすみ、りょこうをしますか。','はい、りょこうをします。'],['なつやすみ、りょこうをしますか。','いいえ、りょこうをしません。'],['まいあさ、何をたべますか。','パンをたべます。'],['日曜日、どこへいきますか。','こうえんへいきます。'],['やすみは何曜日ですか。','日曜日です。'],['何をしますか。','本をよみます。']].forEach(([q,a]) => add('activity', q, a));
 export const questionPatterns: QuestionPattern[] = patterns;

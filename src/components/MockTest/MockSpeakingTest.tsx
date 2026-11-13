@@ -8,7 +8,7 @@ import {
   CheckCircle2, 
   RotateCcw
 } from 'lucide-react';
-import { generateMockTest, type MockTestResult, type TestLength, type TestPreset } from '../../services/mockTestGenerator';
+import { generateMockTest, type MockTestResult } from '../../services/mockTestGenerator';
 
 interface MockSpeakingTestProps {
   onBackToHome: () => void;
@@ -18,8 +18,6 @@ type TestStep = 'intro' | 'reading' | 'questions' | 'completed';
 
 export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome }) => {
   const [step, setStep] = useState<TestStep>('intro');
-  const [length, setLength] = useState<TestLength>('quick');
-  const [preset, setPreset] = useState<TestPreset>('mixed');
   const [test, setTest] = useState<MockTestResult | null>(null);
   
   // Timer state for Reading Part (120 seconds = 2 minutes)
@@ -152,30 +150,10 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
               </span>
               <h3 className="text-sm font-bold text-ink mb-1">Xem tranh &amp; Trả lời câu hỏi</h3>
               <p className="text-xs text-ink-pencil leading-relaxed">
-                Trả lời 3, 5 hoặc 8 câu hỏi trực tiếp và theo tranh, tùy thời lượng bạn chọn.
+                Trả lời 4 câu: 3 câu theo tranh và 1 câu trực tiếp. Mỗi câu 15 điểm; phần đọc 40 điểm.
               </p>
             </div>
           </div>
-
-          <div className="grid gap-4 sm:grid-cols-2 mb-8">
-            <label className="text-sm font-medium text-ink-pencil">Thời lượng
-              <select value={length} onChange={event => setLength(event.target.value as TestLength)} className="mt-2 w-full min-h-11 rounded-xl border border-rule bg-paper-pure px-3 text-ink">
-                <option value="quick">Quick · 3 câu</option>
-                <option value="standard">Standard · 5 câu</option>
-                <option value="full">Full · 8 câu</option>
-              </select>
-            </label>
-            <label className="text-sm font-medium text-ink-pencil">Phạm vi
-              <select value={preset} onChange={event => setPreset(event.target.value as TestPreset)} className="mt-2 w-full min-h-11 rounded-xl border border-rule bg-paper-pure px-3 text-ink">
-                <option value="mixed">Mixed Test</option>
-                <option value="lesson1">Lesson 1 Test</option>
-                <option value="lesson2">Lesson 2 Test</option>
-                <option value="lesson3">Lesson 3 Test</option>
-                <option value="priority">Exam Priority</option>
-              </select>
-            </label>
-          </div>
-          <p className="text-xs text-ink-pencil mb-6">Đề đọc và câu hỏi được chọn ngẫu nhiên. Full trong Mixed Test và Exam Priority trải đều các chủ đề chính.</p>
 
           <div className="flex justify-end pt-4 border-t border-rule">
             <button
@@ -184,7 +162,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
                 try {
                   previous = JSON.parse(localStorage.getItem('learning_jpd_last_mock') || '{}');
                 } catch { /* Storage can be unavailable or contain invalid data. */ }
-                const next = generateMockTest({ length, preset, previousQuestionIds: previous.questionIds, previousReadingId: previous.readingId });
+                const next = generateMockTest({ previousQuestionIds: previous.questionIds, previousReadingId: previous.readingId });
                 setTest(next);
                 try {
                   localStorage.setItem('learning_jpd_last_mock', JSON.stringify({ questionIds: next.speaking.map(q => q.id), readingId: next.reading.id }));
@@ -214,7 +192,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
               <span className="text-xs font-bold uppercase tracking-wider text-ink-muted block mb-0.5">
                 PHẦN 1 &bull; ĐỌC ĐOẠN VĂN THÀNH TIẾNG
               </span>
-              <h2 className="text-lg sm:text-xl font-bold text-ink">{activeReading.title}</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-ink">Part 1 — Reading</h2>
             </div>
 
             {/* Calm Timer Box */}
@@ -282,7 +260,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
                 PHẦN 2 &bull; VẤN ĐÁP
               </span>
               <span className="text-sm font-semibold text-ink">
-                Câu hỏi {currentQuestionIndex + 1} / {testQuestions.length}
+                Question {currentQuestionIndex + 1} / {testQuestions.length}
                 {currentQ.type === 'image' ? ' (Theo tranh)' : ' (Trực tiếp)'}
               </span>
             </div>
@@ -324,7 +302,7 @@ export const MockSpeakingTest: React.FC<MockSpeakingTestProps> = ({ onBackToHome
                 className="px-5 py-2.5 bg-paper-pure hover:bg-paper-subtle border border-rule-strong text-ink text-xs sm:text-sm font-semibold rounded-xl shadow-paper-sm transition-colors inline-flex items-center gap-2 cursor-pointer"
               >
                 <Eye className="w-4 h-4 text-ink-pencil" />
-                <span>Xem đáp án mẫu</span>
+                <span>Xem đáp án</span>
               </button>
             </div>
           ) : (

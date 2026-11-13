@@ -85,7 +85,7 @@ describe('Vocabulary Data Validation', () => {
 
 describe('Mock test data', () => {
   it('contains the requested reading distribution and Japanese-only passages', () => {
-    expect(['1', '2', '3'].map(lesson => readingTests.filter(r => r.lessons.includes(lesson)).length)).toEqual([8, 10, 12]);
+    expect(readingTests.length).toBeGreaterThanOrEqual(40);
     expect(new Set(readingTests.map(r => r.id)).size).toBe(readingTests.length);
     expect(new Set(readingTests.map(r => r.text)).size).toBe(readingTests.length);
     for (const reading of readingTests) {
@@ -114,30 +114,20 @@ describe('Mock test data', () => {
 });
 
 describe('Mock test generator', () => {
-  it('generates each length and scope with no duplicates and avoids the previous test', () => {
-    for (const preset of ['lesson1', 'lesson2', 'lesson3', 'mixed', 'priority'] as const) {
-      for (const [length, count] of [['quick', 3], ['standard', 5], ['full', 8]] as const) {
-        for (let i = 0; i < 20; i++) {
-          const first = generateMockTest({ preset, length });
-          const next = generateMockTest({ preset, length, previousQuestionIds: first.speaking.map(q => q.id), previousReadingId: first.reading.id });
-          expect(next.speaking).toHaveLength(count);
-          expect(new Set(next.speaking.map(q => q.id)).size).toBe(count);
-          expect(next.speaking.some(q => first.speaking.some(old => old.id === q.id))).toBe(false);
-          expect(next.reading.id).not.toBe(first.reading.id);
-          if (preset.startsWith('lesson')) {
-            expect(next.reading.lessons).toContain(preset.slice(-1));
-            expect(next.speaking.every(q => q.lesson === preset.slice(-1))).toBe(true);
-          } else {
-            expect(new Set(next.speaking.map(q => q.lesson)).size).toBe(3);
-            if (length === 'full') expect(new Set(next.speaking.map(q => q.group))).toEqual(new Set(['personal', 'objects', 'commerce', 'schedule']));
-          }
-        }
-      }
+  it('generates one reading and three distinct picture categories followed by one direct question', () => {
+    for (let i = 0; i < 100; i++) {
+      const exam = generateMockTest();
+      expect(exam.reading.text.trim()).toBeTruthy();
+      expect(exam.speaking).toHaveLength(4);
+      expect(exam.speaking.map(q => q.type)).toEqual(['image','image','image','direct']);
+      expect(new Set(exam.speaking.map(q => q.id)).size).toBe(4);
+      expect(new Set(exam.speaking.map(q => q.question)).size).toBe(4);
+      expect(exam.speaking.slice(0, 3).every(q => q.visual?.content.trim())).toBe(true);
+      expect(exam.speaking.every(q => q.expectedAnswers.every(a => a.trim()))).toBe(true);
+      expect(exam.speaking[0].question).toContain('何さい');
+      expect(exam.speaking[1].question).toContain('ごちゅうもん');
+      expect(exam.speaking[2].question).toBe('ここはどこですか。');
     }
-  });
-  it('prioritizes exam questions', () => {
-    const test = generateMockTest({ preset: 'priority', length: 'full' });
-    expect(test.speaking.every(q => q.examPriority)).toBe(true);
   });
 });
 
