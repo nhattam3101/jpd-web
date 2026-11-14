@@ -6,7 +6,7 @@ import { speakingQuestions } from '../data/speakingQuestions';
 import { loadProgress } from '../utils/storage';
 
 interface HomeProps {
-  onSelectMode: (mode: 'flashcard' | 'mock-test' | 'recognition', initialDeckId?: string) => void;
+  onSelectMode: (mode: 'flashcard' | 'mock-test' | 'recognition' | 'numbers', initialDeckId?: string) => void;
 }
 
 
@@ -110,6 +110,8 @@ export const Home: React.FC<HomeProps> = ({ onSelectMode }) => {
             </div>
           </button>
         </section>
+
+        <button onClick={() => onSelectMode('numbers')} className="interactive-lift w-full text-left mb-4 p-5 rounded-2xl bg-paper-pure border border-sage"><strong className="block text-lg">Luyện số</strong><span className="text-sm text-ink-pencil">Phản xạ số, ngày giờ, số lượng và giá tiền theo ngữ cảnh.</span></button>
 
         <button onClick={() => onSelectMode('recognition')} className="interactive-lift group w-full text-left mb-10 p-5 sm:p-6 rounded-2xl bg-sage text-ink flex items-center gap-4 border border-aizome/20">
           <span className="w-11 h-11 rounded-xl bg-paper-pure/75 flex items-center justify-center shrink-0"><MessageCircleQuestion className="w-5 h-5 text-aizome" /></span>

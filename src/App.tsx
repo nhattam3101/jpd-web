@@ -4,15 +4,16 @@ import { Home } from './components/Home';
 import { FlashcardPlayer } from './components/Flashcard/FlashcardPlayer';
 import { MockSpeakingTest } from './components/MockTest/MockSpeakingTest';
 import { KanjiStudy } from './components/Kanji/KanjiStudy';
+import { NumbersStudy } from './components/Numbers/NumbersStudy';
 import { QuestionRecognition } from './components/QuestionRecognition/QuestionRecognition';
 
-type ViewMode = 'home' | 'flashcard' | 'mock-test' | 'recognition' | 'kanji';
+type ViewMode = 'home' | 'flashcard' | 'mock-test' | 'recognition' | 'kanji' | 'numbers';
 
 export function App() {
   const [currentView, setCurrentView] = useState<ViewMode>('home');
   const [activeDeckId, setActiveDeckId] = useState<string>('All');
 
-  const handleSelectMode = (mode: 'flashcard' | 'mock-test' | 'recognition', initialDeckId?: string) => {
+  const handleSelectMode = (mode: 'flashcard' | 'mock-test' | 'recognition' | 'numbers', initialDeckId?: string) => {
     if (initialDeckId) {
       setActiveDeckId(initialDeckId);
     }
@@ -96,6 +97,8 @@ export function App() {
           )}
 
           {currentView === 'kanji' && <KanjiStudy />}
+
+          {currentView === 'numbers' && <NumbersStudy />}
 
           {currentView === 'recognition' && <QuestionRecognition onBackToHome={() => setCurrentView('home')} />}
 

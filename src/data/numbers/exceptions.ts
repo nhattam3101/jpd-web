@@ -1,0 +1,1 @@
+export { exceptionEntries } from './index';
